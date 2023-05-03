@@ -16,3 +16,13 @@ D=(St)/2
 Where D is the distance to the object, S is the speed of sound, and t is the time between transmission and reception of the 
 sound wave. In this way, the sensor, along with code, can calculate distance, which will be converted to electrical signal, 
 causing the motor to vibrate.
+
+The second circuit is the vibrational motor circuit. This circuit has more components. One end of the vibration motor 
+(polarity can be disregarded) will get a direct power supply from the 3.3V pin of the Arduino, this will allow it to vibrate 
+strongly. In parallel with the motor will be a diode that is reverse-biased. This serves to act as a surge protector for 
+the arduino as the motor produces voltage spikes as it rotates. Without the diode, the voltage surges could damage the Arduino. 
+The capacitor, also in parallel with the motor, absorbs these voltage spikes. A transistor is placed in series with the motor, 
+which provides it with current amplification as the Arduino provides a relatively weak power supply. Then, the motor is able 
+to run more powerfully, allowing for more range of vibration depending on how close to an object the sensor is. A 1 K ohm 
+resistor is placed in series with the transistor so not too much current is being supplied to the motor. This end of the 
+circuit is connected to the D3 pin of the Arduino, which is a channel that allows PWM. This digital pen will be set to output
