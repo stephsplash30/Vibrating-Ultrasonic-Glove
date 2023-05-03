@@ -1,0 +1,37 @@
+#define Trig 11 
+#define Echo 10
+#define Motor 3   // IN pin from motor connected to digital pin 3
+                    // (this is a PWM pin on Arduino Uno)
+
+void setup()
+{ pinMode(Trig, OUTPUT);
+pinMode(Echo, INPUT);
+pinMode(Motor, OUTPUT);
+}
+
+void loop()
+{ long x, dist; float timetaken; String model; 
+model = "sigmoidal"; 
+digitalWrite(Trig, LOW); 
+delayMicroseconds(20); 
+digitalWrite(Trig, HIGH);
+delayMicroseconds(10); 
+digitalWrite(Trig, LOW);
+timetaken = (float)pulseIn(Echo, HIGH);
+dist = ((timetaken/2)*340)/10000;//By the formula- distance=(time/2)*speed of sound
+
+if (dist < 100) //If distance is less than 100 motor is activated
+{
+if (dist < 10) {
+analogWrite(Motor, 255); // turn on motor on full power
+delay(2000); // motor vibrates for 2 sec
+}
+else if (model == "sigmoidal"){ //y = 225/(1 + e^(0.1*(x-50)))
+analogWrite(Motor, 255/(1 + pow(M_E, 0.1*(dist - 50))));
+//analogWrite(Buzzer, 255/(1 + pow(M_E, 0.1*(dist - 50))));
+delay(2000); 
+} else
+{
+analogWrite(Motor,0);// If distance is greater than 100, motor is deactivated
+}delay(500);
+}}
