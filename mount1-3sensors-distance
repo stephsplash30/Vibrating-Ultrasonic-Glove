@@ -1,0 +1,38 @@
+#define Trig 11 //Use one trigger and 3 echos to be able to simultaenously trigger
+#define Echo1 10
+#define Echo2 5
+#define Echo3 9
+
+void setup()
+{ pinMode(Trig, OUTPUT);
+pinMode(Echo1, INPUT);
+pinMode(Echo2, INPUT);
+pinMode(Echo3, INPUT);
+}
+void loop()
+{ long x, dist1, dist2, dist3, dist; float timetaken1,timetaken2,timetaken3; 
+digitalWrite(Trig, LOW); 
+delayMicroseconds(20); 
+digitalWrite(Trig, HIGH);
+delayMicroseconds(10); 
+digitalWrite(Trig, LOW);
+timetaken1 = (float)pulseIn(Echo1, HIGH);
+timetaken2 = (float)pulseIn(Echo2, HIGH);
+timetaken3 = (float)pulseIn(Echo3, HIGH);
+dist1 = ((timetaken1/2)*340)/10000;//By the formula- distance=(time/2)*speed of sound
+dist2 = ((timetaken2/2)*340)*cos(15*M_PI/180)/10000; //from the geometry of the mount  
+dist3 = ((timetaken3/2)*340)*cos(30*M_PI/180)/10000; //from the geometry of the mount
+dist = minimum(dist1, dist2, dist3);
+Serial.print(dist);
+}
+
+float minimum(float a, float b, float c){ float min;
+  min=a;
+  if(b<min){
+    min=b;
+  }
+  if(c<min){
+    min=c;
+  }
+  return min;
+}
