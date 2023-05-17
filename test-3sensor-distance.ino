@@ -2,8 +2,8 @@
 #define Echo1 10
 #define Echo2 9
 #define Echo3 5
-#define Buzzer 3
-#define Motor 6
+#define Buzzer 6
+#define Motor 3 
 
 void setup()
 { 
@@ -27,13 +27,12 @@ void loop()
     delayMicroseconds(10); 
     digitalWrite(Trig, LOW);
     timetaken[i] = (float) pulseIn(echo[i], HIGH);
-
+    
     delay(50); 
   }
   dist1 = ((timetaken[0]/2)*340)/10000;//By the formula- distance=(time/2)*speed of sound
   dist2 = cos(15*M_PI/180)*((timetaken[1]/2)*340)/10000;//By the formula- distance=(time/2)*speed of sound
   dist3 = cos(30*M_PI/180)*((timetaken[2]/2)*340)/10000;//By the formula- distance=(time/2)*speed of sound
-  
   dist = minimum(dist1, dist2, dist3);
 
   Serial.begin(9600);
@@ -50,26 +49,7 @@ void loop()
   Serial.print("Distance3: ");
   Serial.print(dist3);
   Serial.println("cm");
-
-  
-  if (dist< 200 && dist > 0) //If distance is less than 100, motor is activated
-  {
-    if (dist < 10){
-      analogWrite(Motor, 255/2);
-      analogWrite(Buzzer, 255/5);
-    }
-    else{
-    //analogWrite(Buzzer, 255*(1 - (dist1-10)/90)/10); // turn on motor on full power (range is 0 - 255)
-      analogWrite(Motor, (255/2)*pow(M_E, (-1)*(dist1-10)/80));
-      analogWrite(Buzzer, (255/5)*pow(M_E, (-1)*(dist1-10)/80));
-    }
-  }
-  else if (dist>0)
-  {
-    analogWrite(Motor, 0);
-    analogWrite(Buzzer, 0);
-  }
-  delay(50); 
+  //delay(100);
 }
 
 float minimum(float a, float b, float c){ float min;

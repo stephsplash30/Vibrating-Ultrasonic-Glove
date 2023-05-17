@@ -1,5 +1,5 @@
 #define Trig 11 //Use one trigger and 3 echos to be able to simultaenously trigger
-#define Echo1 10
+#define Echo1 5
 
 void setup()
 { 
