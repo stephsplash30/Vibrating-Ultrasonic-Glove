@@ -38,7 +38,14 @@ With our full circuit setup, we can conduct our first initial test with the code
 
 ## Sensor Mounting
 
-(@katya something explaining the process and why we chose the mount we did)
+In order for the ultrasonic sensor circuit to work well, it must have a stable mount. The main design feature of our mount is the three angled faces meant to reduce the sensors blindspot as much as possible. Because our project is geared towards serving those with visibility impairments, it is of paramount importance that our design cover as much surface area in front of the user as possible. The degree to which each sensor can detect an object in front of it is about 30 degrees. When coming up with our project design, we knew that the best results would come from having multiple HC-SR04 set up in such a way that vertical blindspots could be reduced as much as possible. With the way our mounts are set up, this goal is achieved. As an aside, we know that the sensors lacks measuring capabilities in front of the sensor's transducer. Because we want the vibrational motor to stop before the user hits an object, we are not concerned about this blindspot. Rather, it helps us in alerting the user that they are approaching an obstacle.
+
+Initially we had planned on attaching the sensors by sticking velcro to the back sides of them and the faces of the mount. This did not provide much stability as the velcro was not very strong and the sensors were not pointing outwards perpendicular to the face of the mount. Instead, we drilled the sensors into the mount with (insert screw type). This provided a sturdy base for the sensors and emitted waves would be pointing straight outard rather than an offset angle.
+
+Another main feature of the mounts is that it has a hollow center and an open strip on the top and middle face; we do not need one of the bottom face as it has direct access to the hoodie's pcoket. This provides us with the ability to feed the sensors wires through the mount and out the bottom. When attaching the mount to the hoodie, this makes it more convenient to connect the sensors to the microcontroller and thus, the vibration circuit, which will both be kept in the hoodie's pocket. 
+
+need to add in images of the mounting process
+-ask katya what the angles on the mount were and well as how she drilled the sensors into the mount.
 
 ## Mount Tests
 
