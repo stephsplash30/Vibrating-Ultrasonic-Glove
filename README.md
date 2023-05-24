@@ -29,6 +29,16 @@ $d$ is the distance to the object, $v_s$ is the speed of sound, and $t$ is the t
 
 Next, we can attach our motor and buzzer circuit (explain it here @katya @kate)
 
+The second circuit is the vibrational motor circuit. This circuit has more components. One end of the vibration motor 
+(polarity can be disregarded) will get a direct power supply from the 3.3V pin of the Arduino, this will allow it to vibrate 
+strongly. In parallel with the motor will be a diode that is reverse-biased. This serves to act as a surge protector for 
+the arduino as the motor produces voltage spikes as it rotates. Without the diode, the voltage surges could damage the Arduino. 
+The capacitor, also in parallel with the motor, absorbs these voltage spikes. A transistor is placed in series with the motor, 
+which provides it with current amplification as the Arduino provides a relatively weak power supply. Then, the motor is able 
+to run more powerfully, allowing for more range of vibration depending on how close to an object the sensor is. A 1 K ohm 
+resistor is placed in series with the transistor so not too much current is being supplied to the motor. This end of the 
+circuit is connected to the D3 pin of the Arduino, which is a channel that allows PWM. This digital pen will be set to output
+
 ## Initial Tests
 With our full circuit setup, we can conduct our first initial test with the code writen in `initial-1sensor-1buzzer1motor.ino`. From this, we can calculate the working range of a single sensor as a starting point for how our final setup will operate. We create a mount setup to sweep a rod both up and down and side to side while looking for a jump in the distance reported to locate the outer boundaries of the sensor in both the directly up and down direction and side to side direction. Since we are given the supposed working range of the sensors, we can compare our results to the datasheet.
 
@@ -53,7 +63,9 @@ need to add in images of the mounting process
 
 ## Adding Sensors
 
-In order to add the sensors to the mounts, they had to be prepped. We began by sodering off the ECHO, TRIG, GND, and VCC pins 
+not done editing
+In attaching the sensors to the mount, they had to be prepped. We began by sodering off the ECHO, TRIG, GND, and VCC pins as they would not allow the sensors to lay flat on the mount's face as well as taking up unnecesary space in a small volume. In place of the pins, four long wires were sodered through the holes that the  pins previously occupied. Each VCC, TRIG, and GND wire from
+
 The electrical signals that will be controlling the vibrational motor will be receiving its input from data from the ultrasonic sensor
 
 
