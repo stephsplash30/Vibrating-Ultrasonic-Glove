@@ -1,7 +1,7 @@
 #define Trig 11 //Use one trigger and 3 echos to be able to simultaenously trigger
-#define Echo1 10
-#define Buzzer 6
-#define Motor 3 
+#define Echo1 5
+#define Buzzer 3
+#define Motor 6
 
 void setup()
 { 
@@ -25,23 +25,24 @@ void loop()
   Serial.print("Distance: ");
   Serial.print(dist1);
   Serial.println("cm");
+
   if (dist1< 150) //If distance is less than 100, motor is activated
   {
     if (dist1 < 30){
       analogWrite(Buzzer, 255/5);
-      analogWrite(Motor, 255);
+      analogWrite(Motor, 255/2);
     }
     else{
     //analogWrite(Buzzer, 255*(1 - (dist1-10)/90)/10); // turn on motor on full power (range is 0 - 255)
-      analogWrite(Buzzer, (255/5)*pow(M_E, (-1)*(dist1-30)/40));
-      analogWrite(Motor, (255/5)*pow(M_E, (-1)*(dist1-30)/80));
+      analogWrite(Motor, (255/2)*pow(M_E, (-1)*(dist1-30)/40));
+      analogWrite(Buzzer, (255/5)*pow(M_E, (-1)*(dist1-30)/20));
     }
   }
   else{
     analogWrite(Motor, 0);
     analogWrite(Buzzer, 0);
   }
-  delay(100);
+  delay(50);
 }
 //add a transistor parallel to the motor, use the diagram on the document Kate made. 
 //edit distance variable to get linear distance to the person

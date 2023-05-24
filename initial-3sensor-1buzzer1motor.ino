@@ -28,7 +28,7 @@ void loop()
     digitalWrite(Trig, LOW);
     timetaken[i] = (float) pulseIn(echo[i], HIGH);
 
-    delay(50); 
+    delay(100); 
   }
   dist1 = ((timetaken[0]/2)*340)/10000;//By the formula- distance=(time/2)*speed of sound
   dist2 = cos(15*M_PI/180)*((timetaken[1]/2)*340)/10000;//By the formula- distance=(time/2)*speed of sound
@@ -40,27 +40,27 @@ void loop()
   Serial.print("Distance: ");
   Serial.print(dist);
   //Serial.println(asctime());
-  Serial.print("cm");
-  Serial.print("Distance1: ");
-  Serial.print(dist1);
-  Serial.print("cm");
-  Serial.print("Distance2: ");
-  Serial.print(dist2);
-  Serial.print("cm");
-  Serial.print("Distance3: ");
-  Serial.print(dist3);
+  //Serial.print("cm");
+  //Serial.print("Distance1: ");
+  //Serial.print(dist1);
+  //Serial.print("cm");
+  //Serial.print("Distance2: ");
+  //Serial.print(dist2);
+  //Serial.print("cm");
+  //Serial.print("Distance3: ");
+  //Serial.print(dist3);
   Serial.println("cm");
 
   
   if (dist< 200 && dist > 0) //If distance is less than 100, motor is activated
   {
     if (dist < 10){
-      analogWrite(Motor, 255/2);
+      analogWrite(Motor, 255);
       analogWrite(Buzzer, 255/5);
     }
     else{
     //analogWrite(Buzzer, 255*(1 - (dist1-10)/90)/10); // turn on motor on full power (range is 0 - 255)
-      analogWrite(Motor, (255/2)*pow(M_E, (-1)*(dist1-10)/80));
+      analogWrite(Motor, (255)*pow(M_E, (-1)*(dist1-10)/80));
       analogWrite(Buzzer, (255/5)*pow(M_E, (-1)*(dist1-10)/80));
     }
   }
