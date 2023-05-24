@@ -5,8 +5,8 @@ Eric Zhu, Kate Saxen, and Katya Osipova
 1. [Introduction](##Introduction)
 2. [Initial Circuit](##Initial-Circuit)
 3. [Initial Tests](##Initial-Tests)
-4. [Adding Sensors](##Adding-Sensors)
-5. [Sensor Mounting](##Sensor-Mounting)
+4. [Adding Sensors](##Sensor-Mounting)
+5. [Sensor Mounting](##Adding-Sensors)
 6. [Mount Tests](##Mount-Tests)
 7. [Final Design](##Final-Design)
 8. [Hoodie Tests](##Hoodie-Tests)
@@ -34,8 +34,6 @@ With our full circuit setup, we can conduct our first initial test with the code
 
 (1 blind spot results here)
 
-## Adding Sensors
-
 ## Sensor Mounting
 
 In order for the ultrasonic sensor circuit to work well, it must have a stable mount. Because our project is geared towards serving those with visibility impairments, it is of paramount importance that our design cover as much surface area in front of the user as possible. Therefore, the main design feature of our mount is the three angled faces, meant to be occupied by three HC-SR04 sensors, which reduces the apparatus's vertical blindspots to a minimum. The mount itself was made using a 3-D printer and a design program called (x-ask Katya about this part).
@@ -52,6 +50,12 @@ Another main feature of the mount is the hollow interior and an open strips on t
 
 need to add in images of the mounting process
 -ask katya what the angles on the mount were and well as how she drilled the sensors into the mount.
+
+## Adding Sensors
+
+In order to add the sensors to the mounts, they had to be prepped. We began by sodering off the ECHO, TRIG, GND, and VCC pins 
+The electrical signals that will be controlling the vibrational motor will be receiving its input from data from the ultrasonic sensor
+
 
 ## Mount Tests
 
