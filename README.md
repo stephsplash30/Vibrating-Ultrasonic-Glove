@@ -32,8 +32,6 @@ The ultrasonic sensor (HC-SR04) was connected to a breadboard. Using four wires,
 $$d=(v_s t)/2$$
 $d$ is the distance to the object, $v_s$ is the speed of sound, and $t$ is the time between transmission and reception of the sound wave. In this way, the sensor, along with code, can calculate distance, which will be converted to electrical signal, causing the motor to vibrate. We are able to test using just one sensor and printing out the distance of the closest object repeatedly using the code written in `initial-1sensor-distance.ino`.
 
-Next, we can attach our motor and buzzer circuit (explain it here @katya @kate)
-
 The second circuit is the vibrational motor circuit. This circuit has more components. One end of the vibration motor 
 (polarity can be disregarded) will get a direct power supply from the 3.3V pin of the Arduino, this will allow it to vibrate 
 strongly. In parallel with the motor will be a diode that is reverse-biased. This serves to act as a surge protector for 
@@ -42,12 +40,14 @@ The capacitor, also in parallel with the motor, absorbs these voltage spikes. A 
 which provides it with current amplification as the Arduino provides a relatively weak power supply. Then, the motor is able 
 to run more powerfully, allowing for more range of vibration depending on how close to an object the sensor is. A 1 K ohm 
 resistor is placed in series with the transistor so not too much current is being supplied to the motor. This end of the 
-circuit is connected to the D3 pin of the Arduino, which is a channel that allows PWM. This digital pen will be set to output
+circuit is connected to the D3 pin of the Arduino, which is a channel that allows PWM. This digital pin will be set to output
 
 ## Initial Tests
-With our full circuit setup, we can conduct our first initial test with the code writen in `initial-1sensor-1buzzer1motor.ino`. From this, we can calculate the working range of a single sensor as a starting point for how our final setup will operate. We create a mount setup to sweep a rod both up and down and side to side while looking for a jump in the distance reported to locate the outer boundaries of the sensor in both the directly up and down direction and side to side direction. Since we are given the supposed working range of the sensors, we can compare our results to the datasheet.
+With our full circuit setup, we can conduct our first initial test with the code writen in `initial-1sensor-1buzzer1motor.ino`. From this, we can calculate the working range of a single sensor as a starting point for how our final setup will operate. We create a mount setup to sweep a rod both up and down and side to side while looking for a jump in the distance reported to locate the outer boundaries of the sensor in both the directly up and down direction and side to side direction. Since we are given the supposed working range of the sensors, we can compare our results to the datasheet. With each of the distances we use, we can create a plot to visualize the working range in both directions.
 
-(1 blind spot results here)
+![Figure_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/6cbcc4c7-78c5-4956-bea1-70cfe85b2433)
+
+As we see in Fig ?, there is a clear outward fanning shape for the vertical working range. This makes sense due to the shape of the sensors likely blocking some nearby waves while being able to accept a larger range from farther away. This works well for our project as we are focused on detecting objects farther away in order to alert the user of an incoming obstacle rather than detecting it too late. However, this makes it harder to compare our results to the values in the datasheet. We can calculate our working range in two ways. The first, we can use a linearization from the plot to map the working range. This yields an approximate value of 18 degrees. We can alternatively calculate it using the end points of our plot as we are more focused on the working range farther away from our sensor. This yields an approximate value of 25 degrees.
 
 ## Sensor Mounting
 
