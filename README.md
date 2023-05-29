@@ -2,15 +2,15 @@
 Eric Zhu, Kate Saxen, and Katya Osipova
 
 ## Table of Contents
-1. [Introduction](##Introduction)
-2. [Initial Circuit](##Initial-Circuit)
-3. [Initial Tests](##Initial-Tests)
-4. [Adding Sensors](##Sensor-Mounting)
-5. [Sensor Mounting](##Adding-Sensors)
-6. [Mount Tests](##Mount-Tests)
-7. [Final Design](##Final-Design)
-8. [Hoodie Tests](##Hoodie-Tests)
-9. [Conclusion](##Conclusion)
+1. [Introduction](#Introduction)
+2. [Initial Circuit](#Initial-Circuit)
+3. [Initial Tests](#Initial-Tests)
+4. [Adding Sensors](#Sensor-Mounting)
+5. [Sensor Mounting](#Adding-Sensors)
+6. [Mount Tests](#Mount-Tests)
+7. [Final Design](#Final-Design)
+8. [Hoodie Tests](#Hoodie-Tests)
+9. [Conclusion](#Conclusion)
 
 ## Introduction 
 For our project, we aim to create a vibrotactile tool that will provide feedback based on the distance to the nearest obstacle, serving as an ancillary device for people with low or no vision in addition to a white cane. The device could be used at home or in busier areas, such as a grocery store. In such environments, white canes could take up too much space or may simply be unnecessary due to familiarity of the environment. By using this device as a replacement, or a supplement, precise distance information is gained, which is critical in mobility.
