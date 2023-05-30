@@ -73,8 +73,9 @@ In attaching the sensors to the mount, they had to be prepped. We began by soder
 
 The electrical signals that will be controlling the vibrational motor will be receiving its input from data from the ultrasonic sensor
 
-
 ## Mount Tests
+
+To start off, we want to test how our mount actually works at comparing each of the sensors individually with the working range of the entire sensor. To do this, we can 
 
 ## Final Design
 
