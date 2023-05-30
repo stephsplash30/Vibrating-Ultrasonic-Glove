@@ -67,6 +67,7 @@ need to add in images of the mounting process
 
 ## Adding Sensors
 
+In order to expand
 not done editing
 In attaching the sensors to the mount, they had to be prepped. We began by sodering off the ECHO, TRIG, GND, and VCC pins as they would not allow the sensors to lay flat on the mount's face as well as taking up unnecesary space in a small volume. In place of the pins, four long wires were sodered through the holes that the  pins previously occupied. Each VCC, TRIG, and GND wire from
 
@@ -76,6 +77,8 @@ The electrical signals that will be controlling the vibrational motor will be re
 ## Mount Tests
 
 ## Final Design
+
+With all of our physical components completed, we can begin to consider how we are going to put it all together. We came up with two possibilities; we could either mount or sensor to a belt or to our chest. We ruled out using the belt as it would likely place the sensor too low to sense anything at around eye-level, while it also may be blocked by an oversized tee or longer jacket. Thus, this leaves us with mounting on our chest. An easy way to mount our sensor onto the user is by using velcro. To do this, we mounted it directly onto a hoodie, using the hoodie as the housing system for our device. We are able to velcro our sensors onto our hoodie and then able to directly attach our motor onto each of the sleeves of our hoodie. The rest of the arduino circuitry can be soldered together and kept in the hoodie pouch. This enables us to compact our entire device to be within the hoodie, while also keeping it relatively lightweight of a system, placing it in areas that are able to carry the weight easier.
 
 ## Hoodie Tests
 
