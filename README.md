@@ -55,6 +55,11 @@ We can do a similar plot for the horizontal working range shown in Fig ?, as we 
 
 Another test that is important for understanding how our sensors work, is to data for the physical distance against the sensor reported distance. To do this, all we need to do is move our thick meter stick forwards and backwards across 5cm intervals, taking an average of the reported values from the Serial Monitor. This process yields a plot as shown in Fig. ?; from it, we see that it follows the expected value at low distances, but begins to deviate somewhat significantly towards the ends. However, at far distances, this deviation is caused by the naturally higher variability in the distance calculation the farther the ultrasonic waves have to travel. At farther distances, the effects of a slight shift in the calculation are much more minimal compared to at closer distances.
 
+![pwmFigure_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/dd40b518-46f5-442c-8e1c-070a9d85130a)
+
+We can do the same test, but wire the LED/buzzer circuitry to an oscilloscope to see how the physical distances are converted to a PWM percentage. From our code, we have our expected function that converts the distances exponentially. We see that in Fig. ? that our data aligns with the expected output well, so the motor and LED circuit are working as we expect it to at any given distance.
+
+
 ## Sensor Mounting
 
 In order for the ultrasonic sensor circuit to work well, it must have a stable mount. Because our project is geared towards serving those with visibility impairments, it is of paramount importance that our design cover as much surface area in front of the user as possible. Therefore, the main design feature of our mount is the three angled faces each of about 15 degrees, meant to be occupied by three HC-SR04 sensors, which reduces the apparatus's vertical blindspots to a minimum. The mount itself was made using a 3-D printer and a design program called (x-ask Katya about this part). Because of this new design, we had to edit our distance caluclation to include the tilt angle of the sensor. $$d=\frac{v_s t}{2\cos{\theta}}$$
