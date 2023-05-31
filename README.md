@@ -78,7 +78,15 @@ need to add in images of the mounting process
 
 ## Adding Sensors
 
-In attaching the sensors to the mount, they had to be prepped. We began by sodering off the ECHO, TRIG, GND, and VCC pins as they would not allow the sensors to lay flat on the mount's face as well as taking up unnecesary space in a small volume. In place of the pins, four long wires were sodered through the holes that the pins previously occupied. Each VCC, TRIG, and GND wire from the three sensors are then threaded through the mount and soldered together and into the same parts of the arduino as before with 1 sensor. Each of the ECHO wires are then connected to independent digital I/O ports, the bottom is plugged into 5, the middle into 9, and the top into 10. By plugging in the three triggers into the same port to be triggered together, that allows the sensors to each send out a wave simultaneously, even though we only loop through one echo at a time. This process can be seen through the code in `initial-3sensor-1buzzer1motor.ino`, which works with the 3 sensors in tandem. It is important to note the delays within the code. If the delay is removed, the sensors take data too fast and will begin outputting strange values that are not representative of what is in front.
+In attaching the sensors to the mount, they had to be prepped. We began by sodering off the ECHO, TRIG, GND, and VCC pins as they would not allow the sensors to lay flat on the mount's face as well as taking up unnecesary space in a small volume. In place of the pins, four long wires were sodered through the holes that the pins previously occupied.  
+
+![IMG_4967](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/0dd0a39e-d06d-4643-b587-d0099f7dc001)
+
+Each VCC, TRIG, and GND wire from the three sensors are then threaded through the mount and soldered together and into the same parts of the arduino as before with 1 sensor.
+
+![IMG_4966](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/93094cc5-8cee-4162-8d08-3df99bd41ac5)
+
+Each of the ECHO wires are then connected to independent digital I/O ports, the bottom is plugged into 5, the middle into 9, and the top into 10. By plugging in the three triggers into the same port to be triggered together, that allows the sensors to each send out a wave simultaneously, even though we only loop through one echo at a time. This process can be seen through the code in `initial-3sensor-1buzzer1motor.ino`, which works with the 3 sensors in tandem. It is important to note the delays within the code. If the delay is removed, the sensors take data too fast and will begin outputting strange values that are not representative of what is in front.
 
 The electrical signals that will be controlling the vibrational motor will be receiving its input from data from the ultrasonic sensor
 
