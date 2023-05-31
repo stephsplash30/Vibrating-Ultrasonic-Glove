@@ -11,6 +11,7 @@ Eric Zhu, Kate Saxen, and Katya Osipova
 7. [Final Design](#Final-Design)
 8. [Hoodie Tests](#Hoodie-Tests)
 9. [Conclusion](#Conclusion)
+![IMG_4959](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/40575479-95cb-472d-a846-e1015c5fc866)
 
 ## Introduction 
 For our project, we aim to create a vibrotactile tool that will provide feedback based on the distance to the nearest obstacle, serving as an ancillary device for people with low or no vision in addition to a white cane. The device could be used at home or in busier areas, such as a grocery store. In such environments, white canes could take up too much space or may simply be unnecessary due to familiarity of the environment. By using this device as a replacement, or a supplement, precise distance information is gained, which is critical in mobility.
