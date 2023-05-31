@@ -106,6 +106,13 @@ From Fig. ?, we note that there is significant overlap between the sensors at a 
 
 After testing each sensor individually, which was representative of a control group, we took measurements of all three sensors working together. And were left with the following results. 
 
+![image](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/e709b48a-d233-4ea0-a846-44061cc1aa9d)
+
+![image](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/18056a6a-420f-4b4c-9537-1364acfbe1fe)
+
+![image](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/22366de0-e019-4057-b62a-a65af8c12056)
+
+
 ## Final Design
 
 With all of our physical components completed, we can begin to consider how we are going to put it all together. We came up with two possibilities; we could either mount or sensor to a belt or to our chest. We ruled out using the belt as it would likely place the sensor too low to sense anything at around eye-level, while it also may be blocked by an oversized tee or longer jacket. Thus, this leaves us with mounting on our chest. An easy way to mount our sensor onto the user is by using velcro. To do this, we mounted it directly onto a hoodie, using the hoodie as the housing system for our device. We are able to velcro our sensors onto our hoodie and then able to directly attach our motor onto each of the sleeves of our hoodie. The rest of the arduino circuitry can be soldered together and kept in the hoodie pouch. This enables us to compact our entire device to be within the hoodie, while also keeping it relatively lightweight of a system, placing it in areas that are able to carry the weight easier. Alternatively, we could have mounted the motor to a glove or a bracelet, but both of those solutions would have added weight to our system.
