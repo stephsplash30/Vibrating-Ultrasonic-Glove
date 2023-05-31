@@ -11,7 +11,6 @@ Eric Zhu, Kate Saxen, and Katya Osipova
 7. [Final Design](#Final-Design)
 8. [Hoodie Tests](#Hoodie-Tests)
 9. [Conclusion](#Conclusion)
-![IMG_4959](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/40575479-95cb-472d-a846-e1015c5fc866)
 
 ## Introduction 
 For our project, we aim to create a vibrotactile tool that will provide feedback based on the distance to the nearest obstacle, serving as an ancillary device for people with low or no vision in addition to a white cane. The device could be used at home or in busier areas, such as a grocery store. In such environments, white canes could take up too much space or may simply be unnecessary due to familiarity of the environment. By using this device as a replacement, or a supplement, precise distance information is gained, which is critical in mobility.
@@ -62,7 +61,9 @@ In order for the ultrasonic sensor circuit to work well, it must have a stable m
 
 This approach focuses on the horizontal distance that the nearest object is from our sensor, which equates to how close it is from hitting any part of our body. In essence, something 1m away thats on the ground may actually be 0.5m from tripping the user, rather than a wall 1m away in front.
 
-(insert image of mount design)
+
+![IMG_4960](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/bb1d9ef0-f4ae-4867-822c-4321c5dca454)
+
 
 Our early designs included a flat faced mount with space for three sensors, but this design was omitted because there was too much overlap in the transmitter's wave emission and not enough dimension in measuring distance to an object. The design that we agreed upon increased the ability of the sensors to detect objects on the ground and near the user, as well as at waist, torso, and head heights.
 
