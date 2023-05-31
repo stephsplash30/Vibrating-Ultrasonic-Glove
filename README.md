@@ -22,11 +22,12 @@ We will demonstrate the use of this glove with ultrasonic sensing technology, wh
 
 Our device lies in a wide field of sensing technologies that have a plethora of applications in motion detection, distance measurement, and level gauge. For example, sonar technology is used in water with its high-frequency sound waves allowing for sound propagation. There are also depth-sensing technologies, like laser scanning or stereo cameras, which create a 3-D image of the surrounding environment. Laser scanning projects an infrared laser point/line onto an object and captures its reflection via a sensor. Stereo cameras operate with the use of multiple lenses that contain image sensors, creating a vision disparity. Both these devices utilize trigonometric triangulation and reflection angles to calculate distance and map a 3-D surface. Our project may have applications outside of its niche, contributing to the whole field of ultrasonic sensing technology.
 
+##
 ## Initial Circuit
 For our project's circuitry, we have two main circuits: one for the ultrasonic sensor and one for the vibrational motor. We can start with focusing on the ultrasonic sensor. The ultrasonic sensor works by emitting and receiving an ultrasonic sound wave via a transducer. When the emitted sound wave hits an object, it is reflected back to the sensor which converts it into an electrical signal, with the aid of an Arduino, Fig. 4. 
 
 <!--- ![Figure-2](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/01e430d8-ef99-4e64-acea-c268178e8dec)-->
-<img src= "https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/01e430d8-ef99-4e64-acea-c268178e8dec" width="800">
+<img src= "https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/01e430d8-ef99-4e64-acea-c268178e8dec" width="600">
 
 ***Fig. 1:** The figure shows the use of the trigger and echo in an ultrasonic sensor. A pulse is sent out and returned and can vary depending on the distance of the nearest object. It is important to note that there is a needed delay between the pulses that are sent out for the sensor to work appropriately.*
 
