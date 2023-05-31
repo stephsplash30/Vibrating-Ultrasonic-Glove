@@ -75,7 +75,17 @@ The electrical signals that will be controlling the vibrational motor will be re
 
 ## Mount Tests
 
-To start off, we want to test how our mount actually works at comparing each of the sensors individually with the working range of the entire sensor. To do this, we can 
+To start off, we want to test how our mount actually works at comparing each of the sensors individually with the working range of the entire sensor. To do this, we can run our `initial-1sensor-distance.ino` code for each of the sensors, running the same initial test we did on 1 sensor, to map each of the sensors working ranges. We can make a plot of all of the independent ranges together, shown in Fig. ?.
+
+![Figure_13ud](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/33337dff-59ec-4575-bacf-dd4c0177ad84)
+
+![Figure_23LR](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/89e4adea-c664-45b1-b55a-3a8854fdb4ac)
+
+We notice that in the vertical direction, the sensors that tilt downwards have a slightly smaller working range, which may be due to the fact of the bouncing angle of the waves on a flat rod. Meanwhile, in the horizontal direction, there is the similar struggle of side to side wave deflection that the three working ranges mostly overlap. To better visualize the compounding of the three sensors, we can plot them relative to each other rather than relative to the appropriate sensor. When we test all three of our sensors together, we mark the middle to be the middle sensor, so we can set that to be the relative 0 for our plots in the vertical direction.
+
+![Figure_1udrel](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/882df767-2df5-4441-a13d-02387323d3b8)
+
+From Fig. ?, we note that there is significant overlap between the sensors at a distance outside of 20cm. Because of this, we likely do not need to worry too much about physical blind spots, focusing more on the problem of waves being reflected away. The bottom sensor appears to add a minimal working range, likely due to the angles making it harder for it to allow for waves to reflect back for it to detect.
 
 ## Final Design
 
