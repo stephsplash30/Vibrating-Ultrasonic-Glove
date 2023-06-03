@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 distances=[10, 15,20,25,30,35,40,45,50,55,60,65,70]
-data = [50,50,50,50,50, 44.5, 39, 35, 31.5, 28, 24.5,21.5, 19]
+data = 0.033 * [50,50,50,50,50, 44.5, 39, 35, 31.5, 28, 24.5,21.5, 19]
 
 x = np.linspace(0, 75, 100)
 

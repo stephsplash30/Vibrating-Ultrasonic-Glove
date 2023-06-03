@@ -26,21 +26,24 @@ def func(x):
 # Create the figure and the first y-axis
 fig, ax1 = plt.subplots()
 ax1.errorbar(distances, data1, yerr=err1, fmt="o",c=(1,0,0,0.5),ms=4,capsize=2)
-ax1.set_xlabel('X-axis')
-ax1.set_ylabel('Physical Distance from the Sensor (cm)', color='r')
+ax1.axline((0,0), slope=1, c=(0,0,1,0.5))
+ax1.set_xlabel('Physical Distance from the Sensor (cm)')
+ax1.set_ylabel('Reported Distance from the Sensor (cm)', color='r')
+ax1.set_ylim((0,70))
 
 # Create the second y-axis
 ax2 = ax1.twinx()
 ax2.errorbar(distances, data2, yerr=err2, fmt="o",c=(0,1,0,0.5),ms=4,capsize=2)
 ax2.plot(x,func(x),c=(0,0,1,0.5))
 ax2.set_ylabel('Voltage from the PWM Output (V)', color='g')
+ax2.set_ylim((0,2))
 
 
 # Customize the appearance
 ax1.tick_params(axis='y', colors='r')
 ax2.tick_params(axis='y', colors='g')
 
-plt.title("Reported Distance vs. Physical Distance")
+plt.title("Voltage Output and Reported Distance vs. Physical Distance")
 
 # Show the plot
 plt.show()
