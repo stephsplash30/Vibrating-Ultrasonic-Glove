@@ -3,8 +3,8 @@ import numpy as np
 distances = [0,20, 40, 57, 77]
 high=[0,4,5,8,15]
 low=[0,-5,-8,-10,-13]
-left=[0,4,6,9,10]
-right=[0,-3,-4,-4.5,-8]
+left=[0,2,4.5,6,7.5]
+right=[0,-1,-3,-4,-5]
 
 ph= np.polyfit(distances,high, deg=1)
 pl= np.polyfit(distances,low, deg=1)
@@ -12,6 +12,7 @@ pll=np.polyfit(distances,left, deg=1)
 pr=np.polyfit(distances,right, deg=1)
 
 err = [0, 1,1,1,1]
+errr= [0,0.5,0.5,0.5,0.5]
 def func(x, p):
     return p[0]*x+p[1]
 
@@ -32,8 +33,8 @@ y1=func(x,pll)
 y2=func(x,pr)
 plt.fill_between(x,y1,y2,color=(0,0,1,0.25))
 
-plt.errorbar(distances, left, yerr=err, fmt="o",c=(1,0,0,0.5),ms=4,capsize=2)
-plt.errorbar(distances, right, yerr=err, fmt="o",c=(1,0,0,0.5),ms=4,capsize=2)
+plt.errorbar(distances, left, yerr=errr, fmt="o",c=(1,0,0,0.5),ms=4,capsize=2)
+plt.errorbar(distances, right, yerr=errr, fmt="o",c=(1,0,0,0.5),ms=4,capsize=2)
 plt.title('Working Range of Single Sensor Left/Right')
 plt.xlabel('Distance from the Sensor (cm)')
 plt.ylabel('Maximum Range Left(+)/Right(-) (cm)')
@@ -84,12 +85,12 @@ plt.errorbar(distances1, left1, yerr=errrl1, fmt="o",c=(0,1,0,0.5),ms=4,capsize=
 plt.errorbar(distances1, right1, yerr=errrl1, fmt="o",c=(0,1,0,0.5),ms=4,capsize=2)
 
 x = np.linspace(0, 110, 110)
-y1=func(x,ph)
-y2=func(x,pl)
+y1=func(x,pll)
+y2=func(x,pr)
 plt.fill_between(x,y1,y2,color=(1,0,0,0.25))
 
-plt.errorbar(distances, high, yerr=err, fmt="o",c=(1,0,0,0.5),ms=4,capsize=2)
-plt.errorbar(distances, low, yerr=err, fmt="o",c=(1,0,0,0.5),ms=4,capsize=2)
+plt.errorbar(distances, left, yerr=err, fmt="o",c=(1,0,0,0.5),ms=4,capsize=2)
+plt.errorbar(distances, right, yerr=err, fmt="o",c=(1,0,0,0.5),ms=4,capsize=2)
 
 
 plt.title('Working Range of Single vs Three Sensor Left/Right')
