@@ -130,4 +130,6 @@ Once we have our final design set up, we have to make some final tests with our 
 
 ## Conclusion
 
+Overall, our hoodie works well to solve the problem we set out to conquer. However, in the future, we can test using different ultrasonic sensors, since we are limited by the ability of the sensors working range and the impact of the orientation of the object. From this, we would want to test out using an ultrasonic sensor with one transmitter and receiver channel combined. We would also want to use alternative ways of sensing such as infared or depth sensing cameras. We would also want to continue to integrate into our hoodie, to make the wiring and system more compact. For the vibration output circuit, we want to test integration into a bracelet or glove to provide the user with more feedback, or alternatively, using audio output in ears. Our project lays down the framework to one day replace the use of white canes, making it a more accessible mobility aid to those with low to no vision.
+
 
