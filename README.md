@@ -65,9 +65,7 @@ In order for the ultrasonic sensor circuit to work well, it must have a stable m
 
 This approach focuses on the horizontal distance that the nearest object is from our sensor, which equates to how close it is from hitting any part of our body. In essence, something 1m away thats on the ground may actually be 0.5m from tripping the user, rather than a wall 1m away in front.
 
-
-![IMG_4960](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/bb1d9ef0-f4ae-4867-822c-4321c5dca454)
-
+![Mount test diagram](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/0d4f43d0-a51a-4221-b469-ca89e63d92c2)
 
 Our early designs included a flat faced mount with space for three sensors, but this design was omitted because there was too much overlap in the transmitter's wave emission and not enough dimension in measuring distance to an object. The design that we agreed upon increased the ability of the sensors to detect objects on the ground and near the user, as well as at waist, torso, and head heights.
 
