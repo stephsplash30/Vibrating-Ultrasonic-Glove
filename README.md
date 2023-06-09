@@ -30,14 +30,14 @@ Ultrasonic sensors use ultrasonic sound waves which are waves of high amplitude,
 
 <img width="501" alt="Screen Shot 2023-06-08 at 5 41 56 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/01645f66-c024-4fdc-a074-e1c6b3d91ea6">
 
-***Fig. 1:** The figure shows how sound waves travel between the transmitter and receiver modules of the ultrasonic sensor.*
+***Fig. 1:** The figure shows how sound waves travel between the transmitter and receiver modules of the ultrasonic sensor and how the waves are reflected off of an object back*
 
 <img width="702" alt="Screen Shot 2023-06-08 at 5 36 40 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/6dbbc668-236c-4180-92e1-f95e11f35c68">
 
 ***Fig. 2:** The figure shows the ultrasonic sensor set up. It has four pins: VCC, Trig, Echo, and GND, which are located on the bottom of the diagram. On either side there is a transmitter module and a receiver module, and on the top of the diagram there is a transducer/crystal oscillator.*
 
 Our circuit works by utilizing Pulse Width Modulation, PWM, to send out and receive pulse signals. 
-The VCC pin (or Voltage Common Connector) supplies a 5 DC voltage from the 5 volt Arduino pin. The Trig pin (connected to Pin D11 on the Arduino) receives this pulse of voltage thus initiating the sensor to transmit 8 cycles of ultrasonic burst at 40 kHz for at least 10 microseconds. If there is an object within the sensor's range of 2 cm to 400 cm and measuring angle of 30 degrees, the waves will bounce back to the sensor. It is then  the receiver that detects the returned burst. The Echo pin (connected to Pin D10 on the Arduino) gets set to 5 volts and a delay for the period (width) is measured. When the width is measured, the distance can be calculated as they are proportional. Pins D10 and D11 are both digital I/O channels where PWM output is possible. The GND pin works to ground the overall system. This process can be visualized in Fig. 1, as it converts one large pulse into an acoustic burst, which is returned to the sensor. The gap between the Trigger and Echo allows us to convert that into a distance eventually. Distance can be found using the equation:
+The VCC pin (or Voltage Common Connector) supplies a 5 DC voltage from the 5 volt Arduino pin. The Trig pin (connected to Pin D11 on the Arduino) receives this pulse of voltage thus initiating the sensor to transmit 8 cycles of ultrasonic burst at 40 kHz for at least 10 microseconds. If there is an object within the sensor's range of 2 cm to 400 cm and measuring angle of 30 degrees, the waves will bounce back to the sensor. It is then  the receiver that detects the returned burst. The Echo pin (connected to Pin D10 on the Arduino) gets set to 5 volts and a delay for the period (width) is measured. When the width is measured, the distance can be calculated as they are proportional. Pins D10 and D11 are both digital I/O channels where PWM output is possible. The GND pin works to ground the overall system. This process can be visualized in Fig. 3, as it converts one large pulse into an acoustic burst, which is returned to the sensor. The gap between the Trigger and Echo allows us to convert that into a distance eventually. Distance can be found using the equation:
 
 $$d=(v_s t)/2$$
 
@@ -56,7 +56,7 @@ We are using PWM coupled with a low pass filter to create an analog output inste
 
 <img width="512" alt="Screen Shot 2023-06-08 at 6 19 21 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/5b58ca48-5128-4f98-8557-84e99e7c3024">
 
-***Fig. 4:** The figure shows the vibrational motor circuit and emphasizes the low pass filter used*
+***Fig. 4:** The figure shows the vibrational motor circuit and emphasizes the low pass filter used. Overall, the motor circuit consists of a resistor, transistor, diode, and capacitor connected in the following way above.*
 
 To work in tandem with the motor circuit we can connect either a buzzer or a LED to the D6 pin to allow for an alternative method of testing our circuit. We started initially with a buzzer, which eventually we switched to a LED due to the squeaky noise the buzzer provided.
 
