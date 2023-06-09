@@ -138,7 +138,8 @@ To start off, we want to test how our mount actually works at comparing each of 
 
 We notice that in the vertical direction in Fig. 10, the sensors that tilt downwards have a slightly smaller working range, which may be due to the fact of the bouncing angle of the waves on a flat rod. Meanwhile, in the horizontal direction in Fig. 11, there is the similar struggle of side to side wave deflection that the three working ranges mostly overlap. To better visualize the compounding of the three sensors, we can plot them relative to each other rather than relative to the appropriate sensor. When we test all three of our sensors together, we mark the middle to be the middle sensor, so we can set that to be the relative 0 for our plots in the vertical direction.
 
-![Figure_1udrel](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/882df767-2df5-4441-a13d-02387323d3b8)
+![Figure_7](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/9adc87f9-3d2b-4920-a83a-a17486c1a285)
+
 ***Fig. 12:** The figure shows the three sensors measured individually in the up and down direction, each relative to the (0,0) set at the middle sensor. The upper points are the maximum height and the bottom points are the minimum heights.*
 
 From Fig. 12, we note that there is significant overlap between the sensors at a distance outside of 20cm. Because of this, we likely do not need to worry too much about physical blind spots, focusing more on the problem of waves being reflected away. The bottom sensor appears to add a minimal working range, likely due to the angles making it harder for it to allow for waves to reflect back for it to detect.
