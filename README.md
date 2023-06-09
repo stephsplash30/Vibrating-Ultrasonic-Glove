@@ -82,7 +82,14 @@ We can do the same test, but wire the LED/buzzer circuitry to an oscilloscope to
 
 ## Sensor Mounting
 
-In order for the ultrasonic sensor circuit to work well, it must have a stable mount. Because our project is geared towards serving those with visibility impairments, it is of paramount importance that our design cover as much surface area in front of the user as possible. Therefore, the main design feature of our mount is the three angled faces each of about 15 degrees, meant to be occupied by three HC-SR04 sensors, which reduces the apparatus's vertical blindspots to a minimum. The mount itself was made using a 3-D printer and a design program called (x-ask Katya about this part). Because of this new design, we had to edit our distance caluclation to include the tilt angle of the sensor. $$d=\frac{v_s t}{2\cos{\theta}}$$
+In order for the ultrasonic sensor circuit to work well, it must have a stable mount. Because our project is geared towards serving those with visibility impairments, it is of paramount importance that our design cover as much surface area in front of the user as possible. Therefore, the main design feature of our mount is the three angled faces each of about 15 degrees, meant to be occupied by three HC-SR04 sensors, which reduces the apparatus's vertical blindspots to a minimum. The mount itself was made using a 3-D printer and a design program called Nexus. The mount design can be viewed in Fig. 8:
+
+<img width="769" alt="Screen Shot 2023-06-08 at 6 36 33 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/1a9f2ebc-ba0b-4c3a-84d6-33e138e3cfcb">
+
+***Fig. 8:** The figure shows the mount that the ultrasonic sensors were placed on*
+
+
+Because of this new design, we had to edit our distance caluclation to include the tilt angle of the sensor. $$d=\frac{v_s t}{2\cos{\theta}}$$
 
 This approach focuses on the horizontal distance that the nearest object is from our sensor, which equates to how close it is from hitting any part of our body. In essence, something 1m away thats on the ground may actually be 0.5m from tripping the user, rather than a wall 1m away in front.
 
