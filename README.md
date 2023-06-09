@@ -129,10 +129,12 @@ The electrical signals that will be controlling the vibrational motor will be re
 
 To start off, we want to test how our mount actually works at comparing each of the sensors individually with the working range of the entire sensor. To do this, we can run our `initial-1sensor-distance.ino` code for each of the sensors, running the same initial test we did on 1 sensor, to map each of the sensors working ranges. We can make a plot of all of the independent ranges together, shown in Fig. 10 and Fig. 11.
 
-![Figure_ww1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/86c46fdd-d5e1-424f-b3f7-ffa095d778f7)
+![Figureww_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/d0aa7d9d-6835-4319-9fa1-4874b9c44563)
+
 ***Fig. 10:** The figure shows the three sensors measured individually in the up and down direction relative to the middle of the respective sensor. The upper points are the maximum height and the bottom points are the minimum heights.*
 
-![Figure_www2](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/a78d5d33-cabb-4194-a55d-f6030996fbbd)
+![Figure_1www](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/bcd0c7a3-a4f6-4dde-87e5-0cdb373f9ddd)
+
 ***Fig. 11:** The figure shows the three sensors measured individually in the left and right direction. The upper points are the maximum leftwards from the sensor and the bottom points are the maximum rightwards from the sensor.*
 
 We notice that in the vertical direction in Fig. 10, the sensors that tilt downwards have a slightly smaller working range, which may be due to the fact of the bouncing angle of the waves on a flat rod. Meanwhile, in the horizontal direction in Fig. 11, there is the similar struggle of side to side wave deflection that the three working ranges mostly overlap. To better visualize the compounding of the three sensors, we can plot them relative to each other rather than relative to the appropriate sensor. When we test all three of our sensors together, we mark the middle to be the middle sensor, so we can set that to be the relative 0 for our plots in the vertical direction.
