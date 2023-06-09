@@ -59,6 +59,14 @@ We are using PWM coupled with a low pass filter to create an analog output inste
 
 To work in tandem with the motor circuit we can connect either a buzzer or a LED to the D6 pin to allow for an alternative method of testing our circuit. We started initially with a buzzer, which eventually we switched to a LED due to the squeaky noise the buzzer provided.
 
+## Testing Apparatus
+In order to precisely measure our device’s detection range we created a stable apparatus where our mount was placed onto a wall with velcro. We set up two vertical mounting rods that each had a horizontal rod attached, which allowed us to secure our test object at a specific y axis for the vertical limit. The depth of the measurement is varied along the third axis, the z axis. During each test, the rod is slowly moved from the outside of the sensor’s range and brought to a position that is detectable by the sensor at a given z value. Similarly, we were able to test for left and right boundaries by turning the test object vertically and slowly moving it along the x axis in front of the sensor. All of our measurements were made relative to the mount’s center surface along multiple distances.
+
+![Mount test diagram](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/0d4f43d0-a51a-4221-b469-ca89e63d92c2)
+
+***Fig. 5:** The figure shows the mounting apparatus used to take all data for our project*
+
+
 ## Initial Tests
 With our full circuit setup, we can conduct our first initial test with the code writen in `initial-1sensor-1buzzer1motor.ino`. For this, we can first begin tweaking the function we use to vibrate the motor. We use a piecewise function where under some given distance, $d_{min}$, the motor output is constant. Thus, we allow $f(x)=V_{max}$ for $x\lt d_{min}$. Now for larger $x$ values, we can use an exponential decay function of the form $f(x)=V_{max}e^{-(x-d_{min})/c}$. For the Arduino, the full power of the system would have $V_{max} = 255$. We start off with $d_{min}=30$ and the constant $c$ determines how fast the power function decays. 
 
@@ -82,17 +90,15 @@ We can do the same test, but wire the LED/buzzer circuitry to an oscilloscope to
 
 ## Sensor Mounting
 
-In order for the ultrasonic sensor circuit to work well, it must have a stable mount. Because our project is geared towards serving those with visibility impairments, it is of paramount importance that our design cover as much surface area in front of the user as possible. Therefore, the main design feature of our mount is the three angled faces each of about 15 degrees, meant to be occupied by three HC-SR04 sensors, which reduces the apparatus's vertical blindspots to a minimum. Another main feature of the mount is the hollow interior and an open strips on the top and middle face; we do not need one of the bottom face as it has direct access to the hoodie's pcoket. This provides us with the ability to feed the sensors wires through the mount and out the bottom. When attaching the mount to the hoodie, this makes it more convenient to connect the sensors to the microcontroller and thus, the vibration circuit, which will both be kept in the hoodie's pocket. The mount itself was made using a 3-D printer and a design program called Fusion 360. The mount design can be viewed in Fig. 8:
+In order for the ultrasonic sensor circuit to work well, it must have a stable mount. Because our project is geared towards serving those with visibility impairments, it is of paramount importance that our design cover as much surface area in front of the user as possible. Therefore, the main design feature of our mount is the three angled faces each of about 15 degrees, meant to be occupied by three HC-SR04 sensors, which reduces the apparatus's vertical blindspots to a minimum. Another main feature of the mount is the hollow interior and an open strips on the top and middle face; we do not need one of the bottom face as it has direct access to the hoodie's pcoket. This provides us with the ability to feed the sensors wires through the mount and out the bottom. When attaching the mount to the hoodie, this makes it more convenient to connect the sensors to the microcontroller and thus, the vibration circuit, which will both be kept in the hoodie's pocket. The mount itself was made using a 3-D printer and a design program called Fusion 360. The mount design can be viewed in Fig. 9:
 
 <img width="769" alt="Screen Shot 2023-06-08 at 6 36 33 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/1a9f2ebc-ba0b-4c3a-84d6-33e138e3cfcb">
 
-***Fig. 8:** The figure shows the mount that the ultrasonic sensors were placed on*
+***Fig. 9:** The figure shows the mount that the ultrasonic sensors were placed on*
 
 Because of this new design, we had to edit our distance caluclation to include the tilt angle of the sensor. $$d=\frac{v_s t}{2\cos{\theta}}$$
 
 This approach focuses on the horizontal distance that the nearest object is from our sensor, which equates to how close it is from hitting any part of our body. In essence, something 1 m away that's on the ground may actually be 0.5 m from tripping the user, rather than a wall 1 m away in front.
-
-![Mount test diagram](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/0d4f43d0-a51a-4221-b469-ca89e63d92c2)
 
 Our early designs included a flat faced mount with space for three sensors, but this design was omitted because there was too much overlap in the transmitter's wave emission and not enough dimension in measuring distance to an object. The design that we agreed upon increased the ability of the sensors to detect objects on the ground and near the user, as well as at waist, torso, and head heights.
 
