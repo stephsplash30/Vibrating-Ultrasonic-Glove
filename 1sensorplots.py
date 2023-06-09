@@ -88,3 +88,19 @@ plt.xlim(left=0)
 plt.xlabel("Distance from the Sensor")
 plt.ylabel("Minimum Height")
 plt.show()
+plt.figure(7)
+distances = [20, 20, 40, 40, 57, 57, 77, 77]
+top=[6,-3,7,-6,10,-8,17,-11]
+mid=[3,-5,5,-8,7.5,-10,12,-15]
+bot=[1,-6,2,-9,5,-11,8,-16]
+err = [0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
+plt.errorbar(distances, top, yerr=err, fmt="o",c=(1,0,0,0.5),ms=4,capsize=2,label="Top Sensor")
+plt.errorbar(distances, mid, yerr=err, fmt="o",c=(0,1,0,0.5),ms=4,capsize=2,label="Middle Sensor")
+plt.errorbar(distances, bot, yerr=err, fmt="o",c=(0,0,1,0.5),ms=4,capsize=2, label="Bottom Sensor")
+plt.xlim(left=0)
+plt.xlabel("Distance from the Sensor (cm)")
+plt.ylabel("Maximum Range Up(+)/Down(-) (cm) ")
+plt.title('Working Range of Each Single Sensor Overlapped Up/Down')
+plt.axhline(0)
+plt.legend()
+plt.show()
