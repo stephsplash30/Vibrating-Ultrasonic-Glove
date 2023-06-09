@@ -43,8 +43,7 @@ $$d=(v_s t)/2$$
 
 $d$ is the distance to the object, $v_s$ is the speed of sound at approximately 343 m/s, and $t$ is the time between transmission and reception of the sound wave. In this way, the sensor, along with code, can calculate distance, which will be converted to electrical signal, causing the motor to vibrate. We are able to test using just one sensor and printing out the distance of the closest object repeatedly using the code written in `initial-1sensor-distance.ino`. This completes the initial ultrasonic sensor half of our circuit.
 
-<!--- ![Figure-2](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/01e430d8-ef99-4e64-acea-c268178e8dec)-->
-<img src= "https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/01e430d8-ef99-4e64-acea-c268178e8dec" width="600">
+<img src= "https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/15cd5b4a-3950-4b60-be05-80288f37246a" width="600">
 
 ***Fig. 3:** The figure shows the use of the trigger and echo in an ultrasonic sensor. A pulse is sent out from the PWM pin, which is converted from a trigger into an acoustic burst that is sent out and returned and can vary depending on the distance of the nearest object. The gap between the outgoing and returning acoustic bursts is the PWM output from the echo pin, which can be converted into a distance. It is important to note that there is a needed delay between the pulses that are sent out for the sensor to work appropriately.*
 
