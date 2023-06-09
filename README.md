@@ -15,9 +15,10 @@ Eric Zhu, Kate Saxen, and Katya Osipova
 
 ## Introduction 
 For our project, we aim to create a vibrotactile tool that will provide feedback based on the distance to the nearest obstacle, serving as an ancillary device for people with low or no vision in addition to a white cane. The device could be used at home or in busier areas, such as a grocery store. In such environments, white canes could take up too much space or may simply be unnecessary due to familiarity of the environment. Overall, the size of a white cane is the main disadvantage, as it can be a safety hazard to the user or the surrounding people. Additionally, the stigmatization of mobility aids such as the white cane makes those with disabilities less inclined to adopt it. By using this device as a replacement, or a supplement, precise distance information is gained, which is critical in mobility. Our goal is to be able to work as well as a white cane, while making our device more compact and seamless to use.
+![wewalk-2-768x512]()
 
 <!--- ![wewalk-2-768x512](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/f6ac35c7-57af-4ce6-a94a-858ef3ee81a0)-->
-<img src= "https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/f6ac35c7-57af-4ce6-a94a-858ef3ee81a0" width="700" >
+<img src= "https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/0ba0eedf-cd50-439e-876d-bdeef5013623" width="700" >
 
 We will demonstrate the use of this device with ultrasonic sensing technology, which uses sound waves to measure distance; these waves are emitted at a frequency range too high for humans to hear. Ultrasonic waves do not interfere with radio and electromagnetic waves, used in other day-to-day devices, allowing for comfortable use in daily life.
 
