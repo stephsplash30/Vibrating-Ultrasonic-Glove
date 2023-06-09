@@ -28,6 +28,7 @@ For our project's circuitry, we have two main circuits: one for the ultrasonic s
 For our initial circuit setup, we connected an ultrasonic sensor (HC-SR04) to a breadboard. Using four wires, we connected the sensor to the Arduino. In order to run the code and power the Arduino, we connected it to a USB Type A to B port connected to a PC. The ultrasonic sensor has four pins: VCC, TRIG, ECHO, and GND. In addition, there is a transmitter module as well as a receiver module on either side of the sensor as illustrated in Fig. 1:
 
 <img width="702" alt="Screen Shot 2023-06-08 at 5 36 40 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/6dbbc668-236c-4180-92e1-f95e11f35c68">
+
 ***Fig. 1:** The figure shows the ultrasonic sensor set up. It has four pins: VCC, Trig, Echo, and GND, which are located on the bottom of the diagram. On either side there is a transmitter module and a receiver module, and on the top of the diagram there is a transducer.*
 
 
