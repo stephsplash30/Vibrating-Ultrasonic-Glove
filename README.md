@@ -4,13 +4,14 @@ Eric Zhu, Kate Saxen, and Katya Osipova
 ## Table of Contents
 1. [Introduction](#Introduction)
 2. [Initial Circuit](#Initial-Circuit)
-3. [Initial Tests](#Initial-Tests)
-4. [Adding Sensors](#Adding-Sensors)
-5. [Sensor Mounting](#Sensor-Mounting)
-6. [Mount Tests](#Mount-Tests)
-7. [Final Design](#Final-Design)
-8. [Hoodie Tests](#Hoodie-Tests)
-9. [Conclusion](#Conclusion)
+3. [Testing Apparatus](#Testing-Apparatus)
+4. [Initial Tests](#Initial-Tests)
+5. [Adding Sensors](#Adding-Sensors)
+6. [Sensor Mounting](#Sensor-Mounting)
+7. [Mount Tests](#Mount-Tests)
+8. [Final Design](#Final-Design)
+9. [Hoodie Tests](#Hoodie-Tests)
+10. [Conclusion](#Conclusion)
 
 ## Introduction 
 For our project, we aim to create a vibrotactile tool that will provide feedback based on the distance to the nearest obstacle, serving as an ancillary device for people with low or no vision in addition to a white cane. The device could be used at home or in busier areas, such as a grocery store. In such environments, white canes could take up too much space or may simply be unnecessary due to familiarity of the environment. Overall, the size of a white cane is the main disadvantage, as it can be a safety hazard to the user or the surrounding people. Additionally, the stigmatization of mobility aids such as the white cane makes those with disabilities less inclined to adopt it. By using this device as a replacement, or a supplement, precise distance information is gained, which is critical in mobility. Our goal is to be able to work as well as a white cane, while making our device more compact and seamless to use.
