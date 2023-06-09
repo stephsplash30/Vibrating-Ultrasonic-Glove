@@ -40,7 +40,7 @@ The VCC pin (or Voltage Common Connector) supplies a 5 DC voltage from the 5 vol
 
 $$d=(v_s t)/2$$
 
-$d$ is the distance to the object, $v_s$ is the speed of sound, and $t$ is the time between transmission and reception of the sound wave. In this way, the sensor, along with code, can calculate distance, which will be converted to electrical signal, causing the motor to vibrate. We are able to test using just one sensor and printing out the distance of the closest object repeatedly using the code written in `initial-1sensor-distance.ino`. This completes the initial ultrasonic sensor half of our circuit.
+$d$ is the distance to the object, $v_s$ is the speed of sound at approximately 343 m/s, and $t$ is the time between transmission and reception of the sound wave. In this way, the sensor, along with code, can calculate distance, which will be converted to electrical signal, causing the motor to vibrate. We are able to test using just one sensor and printing out the distance of the closest object repeatedly using the code written in `initial-1sensor-distance.ino`. This completes the initial ultrasonic sensor half of our circuit.
 
 <!--- ![Figure-2](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/01e430d8-ef99-4e64-acea-c268178e8dec)-->
 <img src= "https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/01e430d8-ef99-4e64-acea-c268178e8dec" width="600">
