@@ -157,9 +157,11 @@ After testing each sensor individually, which was representative of a control gr
 From our previous tests, we notice that the orientation of the rod is very important. If the rod is angled in the right direction, it'll more likely reflect waves to hit the sensor. Thus, we can do the same side to side, up and down test, while being able to rotate the rod at a given location. This gives us the maximum working range with tilt, meaning any object within the working range with tilt has a possibility to be measured by the sensor. We can see from Fig. 13 and Fig. 14, the working ranges are much larger in both the horizontal and vertical directions. The tilt test helps clearly represent the increased working range for the vertical direction, greatly expanding our working range downwards, representing the mount that we use that has sensors angled downwards.
 
 ![Figure_ttnt1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/51afaa08-e5db-47b6-b820-ab5d8997f2fc)
+
 ***Fig. 15:** The figure shows the three sensors measured together in the up and down direction while tilting and without tilting the rod. We can once again sweep out an estimated working range for each of the sets of data.*
 
 ![wwFigure_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/ffa84f38-6187-468b-8bdc-956a20a47209)
+
 ***Fig. 16:** The figure shows the three sensors measured together in the left and right direction while tilting and without tilting the rod. We can once again sweep out an estimated working range for each of the sets of data.*
 
 ## Final Design
