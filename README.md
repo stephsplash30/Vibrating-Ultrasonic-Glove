@@ -73,21 +73,21 @@ With our full circuit setup, we can conduct our first initial test with the code
 
 From this, we can go back to our original `initial-1sensor-distance.ino` to calculate the working range of a single sensor as a starting point for how our final setup will operate. We create a setup to sweep a squared thick meter stick both up and down and side to side while looking for a jump in the distance reported to locate the outer boundaries of the sensor in both the directly up and down direction and side to side direction. We will do this process for a set of distances: 20cm, 40cm, 57cm, and 77cm. We added tape to our setup to ensure reproducibility of our data.  Since we are given the supposed working range of the sensors, we can compare our results to the datasheet. With each of the distances we use, we can create a plot to visualize the working range in both directions.
 
-![FigurVDe_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/e0997916-6cb3-4612-9652-eb4d02ebe3e3)
-***Fig. 6:** The plot is shown gives us a distance vs. distance plot for the sensor's reported value and the physical distance on the left axis. Wee can then convert that into a voltage based on our piecewise function, which is shown on the right axis. We set our minimum distance for the voltage maximum to be set within 30cm, with the farther distances following an exponential decay.*
+![FigurVDe_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/ed92ba55-f268-4662-8d14-ef66f579537b)
 
+***Fig. 6:** The plot is shown gives us a distance vs. distance plot for the sensor's reported value and the physical distance on the left axis. Wee can then convert that into a voltage based on our piecewise function, which is shown on the right axis. We set our minimum distance for the voltage maximum to be set within 30cm, with the farther distances following an exponential decay.*
 
 We can start with a test that is important for understanding how our sensors work, is to data for the physical distance against the sensor reported distance. To do this, all we need to do is move our thick meter stick forwards and backwards across 5cm intervals, taking an average of the reported values from the Serial Monitor. This process yields a plot as shown in Fig. 6 with the left axis; from it, we see that it follows the expected value at low distances, but begins to deviate somewhat significantly towards the ends. However, at far distances, this deviation is caused by the naturally higher variability in the distance calculation the farther the ultrasonic waves have to travel. At farther distances, the effects of a slight shift in the calculation are much more minimal compared to at closer distances.
 
 We can do the same test, but wire the LED/buzzer circuitry to an oscilloscope to see how the physical distances are converted to a PWM percentage. From our code, we have our expected function that converts the distances exponentially. We see that in Fig. 6 on the right axis that our data aligns with the expected output well, so the motor and LED circuit are working as we expect it to at any given distance.
 
-![Figureww_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/12602546-fab9-46c1-8395-2ca5b7b28867)
+![Figureww_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/d0aa7d9d-6835-4319-9fa1-4874b9c44563)
 
 ***Fig. 7:** The plot is shown for the working range of a single sensor in the up and down direction. The red points show the raw data and a linear regression is applied to both sides to estimate the working range up and down.*
 
 As we see in Fig 7, there is a clear outward fanning shape for the vertical working range. This makes sense due to the shape of the sensors likely blocking some nearby waves while being able to accept a larger range from farther away. This works well for our project as we are focused on detecting objects farther away in order to alert the user of an incoming obstacle rather than detecting it too late. However, this makes it harder to compare our results to the values in the datasheet. We can calculate our working range in two ways. The first, we can use a linearization from the plot to map the working range. This yields an approximate value of 18 degrees. We can alternatively calculate it using the end points of our plot as we are more focused on the working range farther away from our sensor. This yields an approximate value of 25 degrees. The datasheet provides that the working range should be 30 degrees, or 15 degrees in each direction. Thus, our calculation at a farther distance matches closer to the expected datasheet value, as there is some fall off in performance of the sensor from close distances. Additionally, it is important to note that there is a slightly uneven effectual range on the two sides of the sensor; it is able to detect more above the sensor than below.
 
-![Figure_1www](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/44dbd9bc-1f28-4134-810d-566a0d565ee1)
+![Figure_1www](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/bcd0c7a3-a4f6-4dde-87e5-0cdb373f9ddd)
 
 ***Fig. 8:** The plot is shown for the working range of a single sensor in the left and right direction. The red points show the raw data and a linear regression is applied to both sides to estimate the working range left and right.*
 
@@ -129,17 +129,17 @@ The electrical signals that will be controlling the vibrational motor will be re
 
 To start off, we want to test how our mount actually works at comparing each of the sensors individually with the working range of the entire sensor. To do this, we can run our `initial-1sensor-distance.ino` code for each of the sensors, running the same initial test we did on 1 sensor, to map each of the sensors working ranges. We can make a plot of all of the independent ranges together, shown in Fig. 10 and Fig. 11.
 
-![Figureww_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/d0aa7d9d-6835-4319-9fa1-4874b9c44563)
+![Figure_ww1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/0ba604f2-dc25-4f4e-a8f6-99f1bf302749)
 
 ***Fig. 10:** The figure shows the three sensors measured individually in the up and down direction relative to the middle of the respective sensor. The upper points are the maximum height and the bottom points are the minimum heights.*
 
-![Figure_1www](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/bcd0c7a3-a4f6-4dde-87e5-0cdb373f9ddd)
+![Figure_www2](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/7dc14411-6cac-425b-8060-eb1e765b1075)
 
 ***Fig. 11:** The figure shows the three sensors measured individually in the left and right direction. The upper points are the maximum leftwards from the sensor and the bottom points are the maximum rightwards from the sensor.*
 
 We notice that in the vertical direction in Fig. 10, the sensors that tilt downwards have a slightly smaller working range, which may be due to the fact of the bouncing angle of the waves on a flat rod. Meanwhile, in the horizontal direction in Fig. 11, there is the similar struggle of side to side wave deflection that the three working ranges mostly overlap. To better visualize the compounding of the three sensors, we can plot them relative to each other rather than relative to the appropriate sensor. When we test all three of our sensors together, we mark the middle to be the middle sensor, so we can set that to be the relative 0 for our plots in the vertical direction.
 
-![Figure_7](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/9adc87f9-3d2b-4920-a83a-a17486c1a285)
+![Figure_7](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/bd487cce-e6eb-4b2e-9d92-41bed104d979)
 
 ***Fig. 12:** The figure shows the three sensors measured individually in the up and down direction, each relative to the (0,0) set at the middle sensor. The upper points are the maximum height and the bottom points are the minimum heights.*
 
@@ -147,21 +147,21 @@ From Fig. 12, we note that there is significant overlap between the sensors at a
 
 After testing each sensor individually, which was representative of a control group, we took measurements of all three sensors working together. We start off by doing the same test we did for the single sensor with the three sensor system, moving the rod side to side and up and down. Since this is our final mount, we measure at more data points to get a better picture of the shape of the working range. We once again can shade in the estimated working range of each, using a linear regression fit, to see that the working range of our three sensor system is greater in both the horizontal and vertical directions.
 
-![Figure_1updown](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/6743e9ee-4eee-41dc-ad5e-87f6a683c2c6)
+![Figure_1updown](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/2024c650-accb-4237-b356-8fe836c3b94e)
 
 ***Fig. 13:** The figure shows the three sensors measured together in the up and down direction relative to the middle of the respective sensor. We then compare this to the single sensor data. We can once again sweep out an estimated working range for each of the sets of data.*
 
-![Figure_1mw](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/26e3e1b2-fc9f-4690-a0bb-7d6f9d788e31)
+![Figure_1mw](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/224a49bd-8dc0-46b6-823b-1b963782b69a)
 
 ***Fig. 14:** The figure shows the three sensors measured together in the left and right direction relative to the middle of the respective sensor. We then compare this to the single sensor data. We can once again sweep out an estimated working range for each of the sets of data.*
 
 From our previous tests, we notice that the orientation of the rod is very important. If the rod is angled in the right direction, it'll more likely reflect waves to hit the sensor. Thus, we can do the same side to side, up and down test, while being able to rotate the rod at a given location. This gives us the maximum working range with tilt, meaning any object within the working range with tilt has a possibility to be measured by the sensor. We can see from Fig. 13 and Fig. 14, the working ranges are much larger in both the horizontal and vertical directions. The tilt test helps clearly represent the increased working range for the vertical direction, greatly expanding our working range downwards, representing the mount that we use that has sensors angled downwards.
 
-![Figure_ttnt1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/51afaa08-e5db-47b6-b820-ab5d8997f2fc)
+![Figure_ttnt1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/b1fad2e3-66fd-487d-908a-8e4e20772f92)
 
 ***Fig. 15:** The figure shows the three sensors measured together in the up and down direction while tilting and without tilting the rod. We can once again sweep out an estimated working range for each of the sets of data.*
 
-![wwFigure_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/ffa84f38-6187-468b-8bdc-956a20a47209)
+![wwFigure_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/10d86f7b-f471-43a1-ae28-e056a9695079)
 
 ***Fig. 16:** The figure shows the three sensors measured together in the left and right direction while tilting and without tilting the rod. We can once again sweep out an estimated working range for each of the sets of data.*
 
