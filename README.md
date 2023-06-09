@@ -82,16 +82,15 @@ We can do the same test, but wire the LED/buzzer circuitry to an oscilloscope to
 
 ## Sensor Mounting
 
-In order for the ultrasonic sensor circuit to work well, it must have a stable mount. Because our project is geared towards serving those with visibility impairments, it is of paramount importance that our design cover as much surface area in front of the user as possible. Therefore, the main design feature of our mount is the three angled faces each of about 15 degrees, meant to be occupied by three HC-SR04 sensors, which reduces the apparatus's vertical blindspots to a minimum. The mount itself was made using a 3-D printer and a design program called Nexus. The mount design can be viewed in Fig. 8:
+In order for the ultrasonic sensor circuit to work well, it must have a stable mount. Because our project is geared towards serving those with visibility impairments, it is of paramount importance that our design cover as much surface area in front of the user as possible. Therefore, the main design feature of our mount is the three angled faces each of about 15 degrees, meant to be occupied by three HC-SR04 sensors, which reduces the apparatus's vertical blindspots to a minimum. Another main feature of the mount is the hollow interior and an open strips on the top and middle face; we do not need one of the bottom face as it has direct access to the hoodie's pcoket. This provides us with the ability to feed the sensors wires through the mount and out the bottom. When attaching the mount to the hoodie, this makes it more convenient to connect the sensors to the microcontroller and thus, the vibration circuit, which will both be kept in the hoodie's pocket. The mount itself was made using a 3-D printer and a design program called Fusion 360. The mount design can be viewed in Fig. 8:
 
 <img width="769" alt="Screen Shot 2023-06-08 at 6 36 33 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/1a9f2ebc-ba0b-4c3a-84d6-33e138e3cfcb">
 
 ***Fig. 8:** The figure shows the mount that the ultrasonic sensors were placed on*
 
-
 Because of this new design, we had to edit our distance caluclation to include the tilt angle of the sensor. $$d=\frac{v_s t}{2\cos{\theta}}$$
 
-This approach focuses on the horizontal distance that the nearest object is from our sensor, which equates to how close it is from hitting any part of our body. In essence, something 1m away thats on the ground may actually be 0.5m from tripping the user, rather than a wall 1m away in front.
+This approach focuses on the horizontal distance that the nearest object is from our sensor, which equates to how close it is from hitting any part of our body. In essence, something 1 m away that's on the ground may actually be 0.5 m from tripping the user, rather than a wall 1 m away in front.
 
 ![Mount test diagram](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/0d4f43d0-a51a-4221-b469-ca89e63d92c2)
 
@@ -99,12 +98,7 @@ Our early designs included a flat faced mount with space for three sensors, but 
 
 As an aside, we know that the sensors lack measuring capabilities in front of the transducer. Because we want the vibrational motor to stop before the user hits an object, we are not concerned about this blindspot. Rather, it helps us in cutting off the vibrational motor, alerting the user that they are directly in front of an obstacle.
 
-Initially we had planned on attaching the sensors by sticking velcro to the back sides of them and the faces of the mount. This did not provide much stability as the velcro was not very strong and the sensors were not pointing outwards perpendicular to the face of the mount. Instead, we drilled the sensors into the mount with (insert screw type and describe how they were screwed in, melted). This provided a sturdy base as the sensors could not be shaken off the mount, and the emitted waves would be sent straight outward rather than at an offset angle.
-
-Another main feature of the mount is the hollow interior and an open strips on the top and middle face; we do not need one of the bottom face as it has direct access to the hoodie's pcoket. This provides us with the ability to feed the sensors wires through the mount and out the bottom. When attaching the mount to the hoodie, this makes it more convenient to connect the sensors to the microcontroller and thus, the vibration circuit, which will both be kept in the hoodie's pocket. 
-
-need to add in images of the mounting process
--ask katya what the angles on the mount were and well as how she drilled the sensors into the mount.
+Initially, we had planned on attaching the sensors by sticking velcro to the back sides of them and the faces of the mount. This did not provide much stability as the velcro was not very strong and the sensors were not pointing outwards perpendicular to the face of the mount. Instead, we drilled the sensors into the mount with tiny screws. This provided a sturdy base as the sensors could not be shaken off the mount, and the emitted waves would be sent straight outward rather than at an offset angle.
 
 ## Adding Sensors
 
