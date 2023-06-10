@@ -60,7 +60,7 @@ To work in tandem with the motor circuit we can connect either a buzzer or a LED
 ## Testing Apparatus
 In order to precisely measure our device’s detection range we created a stable apparatus where our mount was placed onto a wall with velcro. We set up two vertical mounting rods that each had a horizontal rod attached, which allowed us to secure our test object at a specific y axis for the vertical limit. The depth of the measurement is varied along the third axis, the z axis. During each test, the rod is slowly moved from the outside of the sensor’s range and brought to a position that is detectable by the sensor at a given z value. Similarly, we were able to test for left and right boundaries by turning the test object vertically and slowly moving it along the x axis in front of the sensor. All of our measurements were made relative to the mount’s center surface along multiple distances.
 
-![Mount test diagram](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/0d4f43d0-a51a-4221-b469-ca89e63d92c2)
+![Mount test diagram](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/0c83c7e9-3a11-4f3c-9ab1-3cd55eb15200)
 
 ***Fig. 5:** The figure shows the mounting apparatus used to take all data for our project. It is important to note that we define (0,0) to be the center of the middle sensor for the mount. We move a thick meter stick ruler for the most effective test results.*
 
