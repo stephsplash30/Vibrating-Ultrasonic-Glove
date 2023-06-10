@@ -47,13 +47,17 @@ $d$ is the distance to the object, $v_s$ is the speed of sound at approximately 
 
 
 
-The second circuit is the vibrational motor circuit. This circuit has more components. One end of the vibration motor (polarity can be disregarded) will get a direct power supply from the 3.3V pin of the Arduino, this will allow it to vibrate strongly. In parallel with the motor will be a diode that is reverse-biased. This serves to act as a surge protector for the Arduino as the motor produces voltage spikes as it rotates. Without the diode, the voltage surges could damage the Arduino. The capacitor, also in parallel with the motor, absorbs these voltage spikes. A transistor is placed in series with the motor, which provides it with current amplification as the Arduino provides a relatively weak power supply. Then, the motor is able to run more powerfully, allowing for more range of vibration depending on how close to an object the sensor is. Specifically, we used a N-channel MOSFET transistor that works with PWM in its saturated mode, which is when PWM enters its widest width (100% duty cycle), to drive the motor. A 1K ohm resistor is placed in series with the transistor so not too much current is being supplied to the motor. This end of the circuit is connected to the D3 pin of the Arduino, which is a channel that allows PWM. This digital pin will be set to output. Now, we have our motor circuitry completed. 
+The second circuit is the vibrational motor circuit. This circuit has more components. One end of the vibration motor (polarity can be disregarded) will get a direct power supply from the 3.3V pin of the Arduino, this will allow it to vibrate strongly. In parallel with the motor will be a diode that is reverse-biased. This serves to act as a surge protector for the Arduino as the motor produces voltage spikes as it rotates. Without the diode, the voltage surges could damage the Arduino. The capacitor, also in parallel with the motor, absorbs these voltage spikes. A transistor is placed in series with the motor, which provides it with current amplification as the Arduino provides a relatively weak power supply. Then, the motor is able to run more powerfully, allowing for more range of vibration depending on how close to an object the sensor is. Specifically, we used a N-channel MOSFET transistor that works with PWM in its saturated mode, which is when PWM enters its widest width (100% duty cycle), to drive the motor. A 1K ohm resistor is placed in series with the transistor so not too much current is being supplied to the motor. This end of the circuit is connected to the D3 pin of the Arduino, which is a channel that allows PWM. This digital pin will be set to output. Now, we have our motor circuitry completed In the figure below, we can see the completed circuit with all three ultrasonic sensors combined
+
+<img width="537" alt="Screen Shot 2023-06-09 at 9 31 51 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/fb3b2b38-1a89-4254-992e-b4ee39c82c56">
+
+***Fig. 4:** The figure shows the vibrational motor circuit and emphasizes the low pass filter used. Overall, the motor circuit consists of a resistor, transistor, diode, and capacitor connected in the following way above.*
 
 We are using PWM coupled with a low pass filter to create an analog output instead of digital to analog converter because Arduino doesn’t have a DAC. The low pass filter can be seen in Fig. 4 where a resistor is placed in series with the capacitor. The low pass filter works to sequester harmonic frequencies that arise as the sound waves are traveling. The only signal we want to input into our motor is that of the carrier frequency, which is 40 kHz. The harmonic frequencies create a dominant force of uncertainty, which the low pass filter mitigates.
 
 <img width="502" alt="Screen Shot 2023-06-09 at 9 02 41 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/42e9995a-8b3c-46e7-a365-4885de906e53">
 
-***Fig. 4:** The figure shows the vibrational motor circuit and emphasizes the low pass filter used. Overall, the motor circuit consists of a resistor, transistor, diode, and capacitor connected in the following way above.*
+***Fig. 5:** The figure shows the vibrational motor circuit and emphasizes the low pass filter used. Overall, the motor circuit consists of a resistor, transistor, diode, and capacitor connected in the following way above.*
 
 To work in tandem with the motor circuit we can connect either a buzzer or a LED to the D6 pin to allow for an alternative method of testing our circuit, which is much easier to tell a difference than vibration for data collection. We started initially with a buzzer, which eventually we switched to a LED due to the squeaky noise the buzzer produced.
 
@@ -62,7 +66,7 @@ In order to precisely measure our device’s detection range we created a stable
 
 ![Mount test diagram](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/0c83c7e9-3a11-4f3c-9ab1-3cd55eb15200)
 
-***Fig. 5:** The figure shows the mounting apparatus used to take all data for our project. It is important to note that we define (0,0) to be the center of the middle sensor for the mount. We move a thick meter stick ruler for the most effective test results.*
+***Fig. 6:** The figure shows the mounting apparatus used to take all data for our project. It is important to note that we define (0,0) to be the center of the middle sensor for the mount. We move a thick meter stick ruler for the most effective test results.*
 
 
 ## Initial Tests
@@ -70,7 +74,7 @@ With our full circuit setup, we conduct our first initial test with the code wri
 
 ![FigurVDe_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/ed92ba55-f268-4662-8d14-ef66f579537b)
 
-***Fig. 6:** The plot is shown gives us a distance vs. distance plot for the sensor's reported value and the physical distance on the left axis. Wee can then convert that into a voltage based on our piecewise function, which is shown on the right axis. We set our minimum distance for the voltage maximum to be set within 30cm, with the farther distances following an exponential decay.*
+***Fig. 7:** The plot is shown gives us a distance vs. distance plot for the sensor's reported value and the physical distance on the left axis. Wee can then convert that into a voltage based on our piecewise function, which is shown on the right axis. We set our minimum distance for the voltage maximum to be set within 30cm, with the farther distances following an exponential decay.*
 
 We start with a test that is important for understanding how our sensors work, that is data for the physical distance against the sensor reported distance. To do this, we move our thick meter stick forwards and backwards across 5cm intervals, taking an average of the reported values from the Serial Monitor. This process yields a plot as shown in Fig. 6 with the left axis. From it, we see that it follows the expected value at low distances, but begins to deviate somewhat significantly towards the ends. However, at far distances, this deviation is caused by the naturally higher variability in the distance calculation the farther the ultrasonic waves have to travel. At farther distances, the effects of a slight shift in the calculation are much more minimal compared to at closer distances.
 
@@ -80,13 +84,13 @@ Next, based off of our testing apparatus, we create a setup to sweep a squared t
 
 ![Figureww_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/d0aa7d9d-6835-4319-9fa1-4874b9c44563)
 
-***Fig. 7:** The plot is shown for the working range of a single sensor in the up and down direction. The red points show the raw data and a linear regression is applied to both sides to estimate the working range up and down.*
+***Fig. 8:** The plot is shown for the working range of a single sensor in the up and down direction. The red points show the raw data and a linear regression is applied to both sides to estimate the working range up and down.*
 
 As we see in Fig 7, there is a clear outward fanning shape for the vertical working range. This makes sense due to the shape of the sensors likely blocking some nearby waves while being able to accept a larger range from farther away. This works well for our project as we are focused on detecting objects farther away in order to alert the user of an incoming obstacle rather than detecting it too late. However, this makes it harder to compare our results to the values in the datasheet. We can calculate our working range in two ways. The first, we can use a linearization from the plot to map the working range. This yields an approximate value of 18 degrees. We alternatively calculate it using the end points of our plot as we are more focused on the working range farther away from our sensor. This yields an approximate value of 25 degrees. The datasheet provides that the working range should be 30 degrees, or 15 degrees in each direction. Thus, our calculation at a farther distance matches closer to the expected datasheet value, as there is some fall off in performance of the sensor from close distances. Additionally, it is important to note that there is a slightly uneven effectual range on the two sides of the sensor; it is able to detect more above the sensor than below.
 
 ![Figure_1www](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/bcd0c7a3-a4f6-4dde-87e5-0cdb373f9ddd)
 
-***Fig. 8:** The plot is shown for the working range of a single sensor in the left and right direction. The red points show the raw data and a linear regression is applied to both sides to estimate the working range left and right.*
+***Fig. 9:** The plot is shown for the working range of a single sensor in the left and right direction. The red points show the raw data and a linear regression is applied to both sides to estimate the working range left and right.*
 
 We do a similar plot for the horizontal working range shown in Fig 8, as we see a similar outward fanning shape, likely for the same reason as stated earlier. Again, we calulate the working range with the two methods. This first method yields a value of 14 degrees and the second method yields a value of 13 degrees. The working angle in this direction appears to be much smaller than the expected datasheet value and compared to the other direction. Looking at how we took our data, this may be atttributed to the orientation of the rod. Since we lay the rod vertically in front of the sensor, some of the waves may hit the rod but get reflected in a way that that does not allow for it to return to the sensor. Thus, if the rod were slightly turned, the distance it could be tracked may increase. It is likely because of this that the datasheet reports the effectual angle to be less than 15 degrees in every direction. This assumes that if the object is placed in the ideal orientation, it can be detected at an angle of up to 15 degrees, otherwise it is likely less.
 
@@ -96,7 +100,7 @@ In order for the ultrasonic sensor circuit to work well, it must have a stable 3
 
 <img width="781" alt="Screen Shot 2023-06-09 at 9 02 50 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/7b7860da-059c-44e8-ba1a-f6ad89d65f55">
 
-***Fig. 9:** The figure shows the mount that the ultrasonic sensors were placed on. The mounts faces are at angles of 15 degrees with respect to each other.*
+***Fig. 10** The figure shows the mount that the ultrasonic sensors were placed on. The mounts faces are at angles of 15 degrees with respect to each other.*
 
 Because of this new design, we had to edit our distance caluclation to include the tilt angle of the sensor. $$d=\frac{v_s t}{2\cos{\theta}}$$
 
@@ -114,11 +118,13 @@ In attaching the sensors to the mount, they had to be prepped. We began by soder
 
 ![IMG_4967 2](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/ff61ec7d-6461-4307-b591-d73b93058893)
 
+***Fig.11:** The figure shows the vibrational motor circuit and emphasizes the low pass filter used. Overall, the motor circuit consists of a resistor, transistor, diode, and capacitor connected in the following way above.*
 
 Each VCC, TRIG, and GND wire from the three sensors are then threaded through the mount and soldered together and into the same parts of the arduino as before with 1 sensor.
 
 ![IMG_4966 2](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/fa819106-0cba-4990-ba96-5ca51765444e)
 
+***Fig. 12:** The figure shows the vibrational motor circuit and emphasizes the low pass filter used. Overall, the motor circuit consists of a resistor, transistor, diode, and capacitor connected in the following way above.*
 
 Each of the ECHO wires are then connected to independent digital I/O ports, the bottom is plugged into 5, the middle into 9, and the top into 10. By plugging in the three triggers into the same port to be triggered together, that allows the sensors to each send out a wave simultaneously, even though we only loop through one echo at a time. This process can be seen through the code in `initial-3sensor-1buzzer1motor.ino`, which works with the 3 sensors in tandem. It is important to note the delays within the code. If the delay is removed, the sensors take data too fast and will begin outputting strange values that are not representative of what is in front.
 
@@ -130,39 +136,39 @@ To start off, we want to test how our mount actually works at comparing each of 
 
 ![Figure_ww1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/0ba604f2-dc25-4f4e-a8f6-99f1bf302749)
 
-***Fig. 10:** The figure shows the three sensors measured individually in the up and down direction relative to the middle of the respective sensor. The upper points are the maximum height and the bottom points are the minimum heights.*
+***Fig. 13:** The figure shows the three sensors measured individually in the up and down direction relative to the middle of the respective sensor. The upper points are the maximum height and the bottom points are the minimum heights.*
 
 ![Figure_www2](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/7dc14411-6cac-425b-8060-eb1e765b1075)
 
-***Fig. 11:** The figure shows the three sensors measured individually in the left and right direction. The upper points are the maximum leftwards from the sensor and the bottom points are the maximum rightwards from the sensor.*
+***Fig. 14:** The figure shows the three sensors measured individually in the left and right direction. The upper points are the maximum leftwards from the sensor and the bottom points are the maximum rightwards from the sensor.*
 
 We notice that in the vertical direction in Fig. 10, the sensors that tilt downwards have a slightly smaller working range, which may be due to the fact of the bouncing angle of the waves on a flat rod. Meanwhile, in the horizontal direction in Fig. 11, there is the similar struggle of side to side wave deflection that the three working ranges mostly overlap. To better visualize the compounding of the three sensors, we can plot them relative to each other rather than relative to the appropriate sensor. When we test all three of our sensors together, we mark the middle to be the middle sensor, so we can set that to be the relative 0 for our plots in the vertical direction.
 
 ![Figure_7](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/bd487cce-e6eb-4b2e-9d92-41bed104d979)
 
-***Fig. 12:** The figure shows the three sensors measured individually in the up and down direction, each relative to the (0,0) set at the middle sensor. The upper points are the maximum height and the bottom points are the minimum heights.*
+***Fig. 15:** The figure shows the three sensors measured individually in the up and down direction, each relative to the (0,0) set at the middle sensor. The upper points are the maximum height and the bottom points are the minimum heights.*
 
-From Fig. 12, we note that there is significant overlap between the sensors at a distance outside of 20cm. Because of this, we likely do not need to worry too much about physical blind spots, focusing more on the problem of waves being reflected away. The bottom sensor appears to add a minimal working range, likely due to the angles making it harder for it to allow for waves to reflect back for it to detect.
+From Fig. 15, we note that there is significant overlap between the sensors at a distance outside of 20cm. Because of this, we likely do not need to worry too much about physical blind spots, focusing more on the problem of waves being reflected away. The bottom sensor appears to add a minimal working range, likely due to the angles making it harder for it to allow for waves to reflect back for it to detect.
 
 After testing each sensor individually, which was representative of a control group, we took measurements of all three sensors working together. We start off by doing the same test we did for the single sensor with the three sensor system, moving the rod side to side and up and down. Since this is our final mount, we measure at more data points to get a better picture of the shape of the working range. We once again can shade in the estimated working range of each, using a linear regression fit, to see that the working range of our three sensor system is greater in both the horizontal and vertical directions.
 
 ![Figure_1updown](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/2024c650-accb-4237-b356-8fe836c3b94e)
 
-***Fig. 13:** The figure shows the three sensors measured together in the up and down direction relative to the middle of the respective sensor. We then compare this to the single sensor data. We can once again sweep out an estimated working range for each of the sets of data.*
+***Fig. 16:** The figure shows the three sensors measured together in the up and down direction relative to the middle of the respective sensor. We then compare this to the single sensor data. We can once again sweep out an estimated working range for each of the sets of data.*
 
 ![Figure_1mw](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/224a49bd-8dc0-46b6-823b-1b963782b69a)
 
-***Fig. 14:** The figure shows the three sensors measured together in the left and right direction relative to the middle of the respective sensor. We then compare this to the single sensor data. We can once again sweep out an estimated working range for each of the sets of data.*
+***Fig. 17:** The figure shows the three sensors measured together in the left and right direction relative to the middle of the respective sensor. We then compare this to the single sensor data. We can once again sweep out an estimated working range for each of the sets of data.*
 
 From our previous tests, we notice that the orientation of the rod is very important. If the rod is angled in the right direction, it'll more likely reflect waves to hit the sensor. Thus, we can do the same side to side, up and down test, while being able to rotate the rod at a given location. This gives us the maximum working range with tilt, meaning any object within the working range with tilt has a possibility to be measured by the sensor. We can see from Fig. 13 and Fig. 14, the working ranges are much larger in both the horizontal and vertical directions. The tilt test helps clearly represent the increased working range for the vertical direction, greatly expanding our working range downwards, representing the mount that we use that has sensors angled downwards.
 
 ![Figure_ttnt1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/b1fad2e3-66fd-487d-908a-8e4e20772f92)
 
-***Fig. 15:** The figure shows the three sensors measured together in the up and down direction while tilting and without tilting the rod. We can once again sweep out an estimated working range for each of the sets of data.*
+***Fig. 18:** The figure shows the three sensors measured together in the up and down direction while tilting and without tilting the rod. We can once again sweep out an estimated working range for each of the sets of data.*
 
 ![wwFigure_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/10d86f7b-f471-43a1-ae28-e056a9695079)
 
-***Fig. 16:** The figure shows the three sensors measured together in the left and right direction while tilting and without tilting the rod. We can once again sweep out an estimated working range for each of the sets of data.*
+***Fig. 19:** The figure shows the three sensors measured together in the left and right direction while tilting and without tilting the rod. We can once again sweep out an estimated working range for each of the sets of data.*
 
 ## Final Design
 
@@ -170,7 +176,7 @@ With all of our physical components completed, we can begin to consider how we a
 
 ![Screen Shot 2023-06-09 at 9 02 55 PM](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/bde2dfa4-acc3-4ccb-ab74-ec626ece235e)
 
-***Fig. 17:** The figure shows the final design of our circuits as we implement it into our hoodie.*
+***Fig. 20:** The figure shows the final design of our circuits as we implement it into our hoodie.*
 
 ## Hoodie Tests
 
