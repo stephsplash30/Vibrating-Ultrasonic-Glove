@@ -4,12 +4,12 @@ Eric Zhu, Kate Saxen, and Katya Osipova
 ## Table of Contents
 1. [Introduction](#Introduction)
 2. [Initial Circuit](#Initial-Circuit)
-3. [Testing Apparatus](#Testing-Apparatus)
-4. [Initial Tests](#Initial-Tests)
-5. [Adding Sensors](#Adding-Sensors)
-6. [Sensor Mounting](#Sensor-Mounting)
-7. [Mount Tests](#Mount-Tests)
-8. [Final Design](#Final-Design)
+3. [Final Design](#Final-Design)
+4. [Testing Apparatus](#Testing-Apparatus)
+5. [Sensor Mounting](#Sensor-Mounting)
+6. [Adding Sensors](#Adding-Sensors)
+7. [Initial Tests](#Initial-Tests)
+8. [Mount Tests](#Mount-Tests)
 9. [Hoodie Tests](#Hoodie-Tests)
 10. [Conclusion](#Conclusion)
 
