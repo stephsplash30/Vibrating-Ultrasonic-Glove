@@ -27,11 +27,11 @@ For our project's circuitry, we have two main circuits: one for the ultrasonic s
 
 Ultrasonic sensors use ultrasonic sound waves which are waves of high amplitude, above the approximate upper limit of audible human range at 20 kHz. An ultrasonic sensor works by emitting sound waves from a transmitter module. When an emitted sound wave hits an object within the sensor's range, it is reflected back to the receiver module Fig. 1. For our initial circuit setup, we connected an ultrasonic sensor (HC-SR04) to a breadboard. Using four wires, we connected the sensor to the Arduino. In order to run the code and power the Arduino, we connected it to a USB Type A to B port connected to a PC. The ultrasonic sensor has four pins: VCC, TRIG, ECHO, and GND. In addition, there is a transmitter module as well as a receiver module on either side of the sensor and a crystal oscillator as illustrated in Fig. 2:
 
-<img width="501" alt="Screen Shot 2023-06-08 at 5 41 56 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/01645f66-c024-4fdc-a074-e1c6b3d91ea6">
+<img width="534" alt="Screen Shot 2023-06-09 at 9 02 31 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/48030b35-e187-407f-812a-6214244ba87f">
 
 ***Fig. 1:** The figure shows how sound waves travel between the transmitter and receiver modules of the ultrasonic sensor and how the waves are reflected off of an object back*
 
-<img width="702" alt="Screen Shot 2023-06-08 at 5 36 40 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/6dbbc668-236c-4180-92e1-f95e11f35c68">
+<img width="759" alt="Screen Shot 2023-06-09 at 9 02 20 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/a6afde2e-d798-4168-8b5b-bdc756a3d8ce">
 
 ***Fig. 2:** The figure shows the ultrasonic sensor set up. It has four pins: VCC, Trig, Echo, and GND, which are located on the bottom of the diagram. On either side there is a transmitter module and a receiver module, and on the top of the diagram there is a transducer/crystal oscillator.*
 
