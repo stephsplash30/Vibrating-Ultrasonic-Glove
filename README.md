@@ -51,7 +51,7 @@ The second circuit is the vibrational motor circuit. This circuit has more compo
 
 We are using PWM coupled with a low pass filter to create an analog output instead of digital to analog converter because Arduino doesn’t have a DAC. The low pass filter can be seen in Fig. 4 where a resistor is placed in series with the capacitor. The low pass filter works to sequester harmonic frequencies that arise as the sound waves are traveling. The only signal we want to input into our motor is that of the carrier frequency, which is 40 kHz. The harmonic frequencies create a dominant force of uncertainty, which the low pass filter mitigates.
 
-<img width="512" alt="Screen Shot 2023-06-08 at 6 19 21 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/5b58ca48-5128-4f98-8557-84e99e7c3024">
+<img width="502" alt="Screen Shot 2023-06-09 at 9 02 41 PM" src="https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/132398869/42e9995a-8b3c-46e7-a365-4885de906e53">
 
 ***Fig. 4:** The figure shows the vibrational motor circuit and emphasizes the low pass filter used. Overall, the motor circuit consists of a resistor, transistor, diode, and capacitor connected in the following way above.*
 
