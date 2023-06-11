@@ -125,13 +125,13 @@ We do the same test, but wire the LED/buzzer circuitry to an oscilloscope to see
 
 Next, based off of our testing apparatus, we create a setup to sweep a squared thick meter stick both up and down and side to side while looking for a jump in the distance reported to locate the outer boundaries of the sensor in both the directly up and down direction and side to side direction. We will do this process for a set of distances: 20cm, 40cm, 57cm, and 77cm. We added tape to our setup to ensure reproducibility of our data.  Since we are given the supposed working range of the sensors, we can compare our results to the datasheet. With each of the distances we use, we can create a plot to visualize the working range in both directions.
 
-![Figureww_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/d0aa7d9d-6835-4319-9fa1-4874b9c44563)
+![Vertical working range of a single sensor](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/110078529/8d5049d7-55f8-4fb3-9596-33d78233ad06)
 
 ***Fig. 12:** The plot is shown for the working range of a single sensor in the up and down direction. The red points show the raw data and a linear regression is applied to both sides to estimate the working range up and down.*
 
 As we see in (Fig. 12), there is a clear outward fanning shape for the vertical working range. This makes sense due to the shape of the sensors likely blocking some nearby waves while being able to accept a larger range from farther away. This works well for our project as we are focused on detecting objects farther away in order to alert the user of an incoming obstacle rather than detecting it too late. However, this makes it harder to compare our results to the values in the datasheet. We can calculate our working range in two ways. The first, we can use a linearization from the plot to map the working range. This yields an approximate value of 18 degrees. We alternatively calculate it using the end points of our plot as we are more focused on the working range farther away from our sensor. This yields an approximate value of 25 degrees. The datasheet provides that the working range should be 30 degrees, or 15 degrees in each direction. Thus, our calculation at a farther distance matches closer to the expected datasheet value, as there is some fall off in performance of the sensor from close distances. Additionally, it is important to note that there is a slightly uneven effectual range on the two sides of the sensor; it is able to detect more above the sensor than below.
 
-![Figure_1www](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/bcd0c7a3-a4f6-4dde-87e5-0cdb373f9ddd)
+![Horizontal working range of a single sensor](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/110078529/a04f1936-6101-4937-bc0d-e1b7747c5272)
 
 ***Fig. 13:** The plot is shown for the working range of a single sensor in the left and right direction. The red points show the raw data and a linear regression is applied to both sides to estimate the working range left and right.*
 
