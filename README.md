@@ -115,7 +115,7 @@ The electrical signals that will be controlling the vibrational motor will be re
 ## Initial Tests
 With our full circuit setup, we conduct our first initial test with the code writen in `initial-1sensor-1buzzer1motor.ino`. For this, we first begin tweaking the function we use to vibrate the motor. We use a piecewise function where under some given distance, $d_{min}$, the motor output is constant. Thus, we allow $f(x)=V_{max}$ for $x\lt d_{min}$. Now for larger $x$ values, we use an exponential decay function of the form $f(x)=V_{max}e^{-(x-d_{min})/c}$. For the Arduino, the full power of the system would have $V_{max} = 255$. We start off with $d_{min}=30$ and the constant $c$ determines how fast the power function decays. 
 
-![FigurVDe_1](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/50758177/ed92ba55-f268-4662-8d14-ef66f579537b)
+![Voltage Output and Reported Distance vs  Physical Distance](https://github.com/stephsplash30/Vibrating-Ultrasonic-Glove/assets/110078529/e4584dad-eb24-43ed-bfc7-dd7bfd240381)
 
 ***Fig. 11:** The plot is shown gives us a distance vs. distance plot for the sensor's reported value and the physical distance on the left axis. Wee can then convert that into a voltage based on our piecewise function, which is shown on the right axis. We set our minimum distance for the voltage maximum to be set within 30cm, with the farther distances following an exponential decay.*
 
